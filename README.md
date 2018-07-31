@@ -68,7 +68,7 @@ This mentor was really thorough and we talk about 3-4 things in such details. To
 
 ## Some selected exercises
 Color codes:
- first time in python ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) | _easy_ ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) | _not so easy_ ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) | medium ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+)
+ first time in python ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) | _easy_ ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) | _not so easy_ ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) | medium ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) | hard ![#000000](https://placehold.it/10/FF7C63/000000?text=+)
 
 Exercises from the main track are:
  - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [leap](leap) ([_.py solution_](leap/leap.py))
