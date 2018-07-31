@@ -57,7 +57,7 @@ with the iterative form.
 
 My solution simply use a stack in which I will store cursors that indicate positions in iterable.
 A cursor simply is an (address, index) pair, with the address being the currently
-traversed array's address and index is the position within that array. If we were
+traversed array's address and index is the position within that array. Note that if we were
 using [numpy](http://www.numpy.org/) arrays we could even just store the cursor position as the address of the
 current sublist being traversed, note the difference:
 ```python
