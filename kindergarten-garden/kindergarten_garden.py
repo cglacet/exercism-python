@@ -23,14 +23,14 @@ class Garden:
     def __init__(self, diagram, students=None):
         self.students = sorted(students if students else STUDENTS)
         self.cups = defaultdict(list)
-        for student, plants in self._cups(diagram):
+        for student, plants in self._cups_in_diagram(diagram):
             self.cups[student].extend(plants)
 
     def plants(self, student):
         """Returns a list containing the given `student`'s plants."""
         return [PLANTS[plant] for plant in self.cups[student]]
 
-    def _cups(self, diagram):
+    def _cups_in_diagram(self, diagram):
         for row in Garden._plant_rows(diagram):
             yield from self._cups_in_row(row)
 

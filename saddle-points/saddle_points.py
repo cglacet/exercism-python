@@ -25,15 +25,10 @@ class Matrix:
         """A "saddle point" is greater than or equal to every element in its row
         and less than or equal to every element in its column.
         """
-        print("Input", self)
         row_argmax = self.is_row(condition=max)
-        print("Rows max:", row_argmax)
         col_argmin = self.is_col(condition=min)
-        print("Columns min:", col_argmin)
         is_saddle = row_argmax & col_argmin
-        print("is Saddle", is_saddle)
         saddle_indexes = set(self.index_where(is_saddle))
-        print([self[index] for index in saddle_indexes])
         return saddle_indexes
 
     def index_where(self, condition):
@@ -70,10 +65,3 @@ class Matrix:
 def saddle_points(data):
     matrix = Matrix(data)
     return matrix.saddle_points()
-
-if __name__ == "__main__":
-    saddle_points([
-        [9, 8, 7],
-        [5, 3, 2],
-        [6, 6, 7]
-    ])

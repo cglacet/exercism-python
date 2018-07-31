@@ -90,6 +90,109 @@ Matrix(
 )
 ```
 
+### What you can have a look at
+
+#### Kind of immutable
+
+Property "immutability" can be achieve by having a `_` property which means that
+the property is not part of the public API.
+```python
+def __init__(self, data):
+    self._data = data
+
+@property
+def data(self):
+    return self._data[:]
+```
+I added quotes around immutability
+because access to `_data` is not prevented by any mechanism, if someone just call
+`m = Matrix([[1,2]])` then `m._data = [[3,4]]` then `print(m)` will print:
+```python
+Matrix(
+	[3, 4]
+)
+```
+On the other hand, if you call `m.data = [[3,4]]` the following error will be raised:
+```python
+AttributeError: can't set attribute
+```
+Which is exactly what we want, every modification of the `data` property should be
+done internally (within a matrix object).
+
+What do you think will be printed if you do:
+```python
+m = Matrix([[1,2]])
+data = m.data
+data = [[3,4]]
+print(m)
+```
+<details>
+<summary>
+Click here once you think you have the answer.
+</summary>
+
+```python
+Matrix(
+	[1, 2]
+)
+```
+
+Look closer at the `data` ~~method~~ property:
+
+```python
+@property
+def data(self):
+    return self._data[:]
+```
+
+The slice operator `[<start>:<end>]` doesn't return a reference but a copy of the input array.
+Therefore `data` and `m.data` are two distinct lists.
+```python
+m = Matrix([[1,2]])
+data = m.data
+print("data address =",hex(id(data)))
+print("m.data address =", hex(id(m.data)))
+```
+Prints:
+```python
+data address = 0x1099b2048
+m.data address = 0x10999ee88
+```
+
+Notice that `numpy` does return a reference when slicing:
+```python
+m = numpy.array([1,2,5,4])
+sub_m = m[:]
+sub_m[2] = 3
+print(m)
+print("m address =",hex(id(m)))
+print("sub_m address =", hex(id(sub_m)))
+```
+
+This would print:
+```python
+[1 2 3 4]
+data address = 0x109099a80
+m.data address = 0x109099ad0
+```
+</details>
+
+If you need a true immutable property, [this solution](https://gist.github.com/microamp/9d8e3359bcadd7dca6a8#file-immutable-py-L13) looks good enough to me:
+```python
+class Immutable2(tuple):
+    """Immutable class using tuple."""
+    def __new__(cls, x, y):
+        return tuple.__new__(cls, (x, y,))
+
+    @property
+    def x(self):
+        return tuple.__getitem__(self, 0)
+
+    @property
+    def y(self):
+        return tuple.__getitem__(self, 1)
+```
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
