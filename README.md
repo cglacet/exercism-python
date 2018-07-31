@@ -80,6 +80,6 @@ Exercises from the main track are:
  - [saddle-points](saddle-points) (in progress)
 
 Extra exercises that I think are interesting:
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) Error raising: [bank-account](bank-account) ([_.py solution_](bank-account/bank_account.py))
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) Stack size issues: [flatten-array](flatten-array) ([_.py solution_](flatten-array/flatten_array.py))
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) Algorithmic problem: [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py) if you have a simpler solution I'm interested)
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) Decorators and errors: [bank-account](bank-account) ([_.py solution_](bank-account/bank_account.py))
+ - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) Python stack discussion (iterative array flattening): [flatten-array](flatten-array) ([_.py solution_](flatten-array/flatten_array.py))
+ - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) Interesting algorithmic problem: [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py) if you have a simpler solution I'm interested)
