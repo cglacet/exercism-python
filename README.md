@@ -11,6 +11,6 @@ Exercises from the main track are:
  - [saddle-points](saddle-points) (in progress)
 
 Extra exercises that I think are interesting:
- - Error raising: [bank-account](bank-account)
- - Stack size issues: [flatten-array](flatten-array)
- - Not so easy algorithmical problem: [rectangles](rectangles) (if you find/found a simpler solution I'm interesed)
+ - Error raising: [bank-account](bank-account) ([_.py solution_](bank-account/bank-account.py))
+ - ![#f03c15](https://placehold.it/8/f03c15/000000?text=+) Stack size issues: [flatten-array](flatten-array) ([_.py solution_](flatten-array/flatten-array.py))
+ - Not so easy algorithmic problem: [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py) if you have a simpler solution I'm interested)
