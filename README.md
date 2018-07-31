@@ -14,6 +14,8 @@ Mentoring is oriented tower language specific questions, but you also can get ad
 <summary>
 Here is an example of exchange I had with a mentor on handling optional parameters in python:
 </summary>
+
+
 > __Mentor__
 >
 >  Lines 12-14 could as easily be self.students = sorted(students or Garden.DEFAULT_CHILDREN_NAMES)
