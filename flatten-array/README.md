@@ -106,6 +106,15 @@ def elements_of(iterable):
            cursor[1] += 1 # "i += 1"
 ```
 
+In terms of complexity, with _n_ being the total
+number of objects in the input `iterable` (note that `[[[[1]]]]` contains four
+objects in total, three lists and one integer):
+ - Time complexity is _O(n)_, we progress go over each object exactly once.
+ - Space complexity is also _O(n)_. We store one (address, index) pair per sublist
+ in `iterable`. The maximum number of sublist is _n_ in the case where `iterable`
+ is only made of _n-1_ lists encapsulated in one another with a single value
+ inside the last list, like so `[[[[[...[1]...]]]]]`.
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
