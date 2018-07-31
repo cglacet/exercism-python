@@ -1,0 +1,12 @@
+[
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_a_by_0",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_a_by_1",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_a_by_26",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_all_letters",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_capital_letters",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_m_by_13",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_n_by_13_with_wrap_around_alphabet",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_numbers",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_punctuation",
+  "rotational_cipher_test.py::RotationalCipherTest::test_rotate_spaces"
+]

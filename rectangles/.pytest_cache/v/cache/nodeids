@@ -1,0 +1,15 @@
+[
+  "rectangles_test.py::RectanglesTest::test_1x1_square_is_counted",
+  "rectangles_test.py::RectanglesTest::test_corner_is_required_for_a_rectangle_to_be_complete",
+  "rectangles_test.py::RectanglesTest::test_five_rectangles_with_shared_parts",
+  "rectangles_test.py::RectanglesTest::test_large_input_with_many_rectangles",
+  "rectangles_test.py::RectanglesTest::test_no_columns",
+  "rectangles_test.py::RectanglesTest::test_no_rectangles",
+  "rectangles_test.py::RectanglesTest::test_no_rows",
+  "rectangles_test.py::RectanglesTest::test_one_rectangle",
+  "rectangles_test.py::RectanglesTest::test_only_complete_rectangles_are_counted",
+  "rectangles_test.py::RectanglesTest::test_rectangle_of_height_1_is_counted",
+  "rectangles_test.py::RectanglesTest::test_rectangle_of_width_1_is_counted",
+  "rectangles_test.py::RectanglesTest::test_rectangles_can_be_of_different_sizes",
+  "rectangles_test.py::RectanglesTest::test_two_rectangles_without_shared_parts"
+]

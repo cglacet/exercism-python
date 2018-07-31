@@ -1,0 +1,7 @@
+[
+  "rna_transcription_test.py::RnaTranscriptionTest::test_transcribes_adenine_to_uracil",
+  "rna_transcription_test.py::RnaTranscriptionTest::test_transcribes_all_occurrences",
+  "rna_transcription_test.py::RnaTranscriptionTest::test_transcribes_cytosine_to_guanine",
+  "rna_transcription_test.py::RnaTranscriptionTest::test_transcribes_guanine_to_cytosine",
+  "rna_transcription_test.py::RnaTranscriptionTest::test_transcribes_thymine_to_adenine"
+]

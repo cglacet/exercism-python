@@ -1,0 +1,15 @@
+[
+  "allergies_test.py::AllergiesTest::test_allergic_to_eggs_and_peanuts",
+  "allergies_test.py::AllergiesTest::test_allergic_to_eggs_in_addition_to_other_stuff",
+  "allergies_test.py::AllergiesTest::test_allergic_to_everything",
+  "allergies_test.py::AllergiesTest::test_allergic_to_just_eggs",
+  "allergies_test.py::AllergiesTest::test_allergic_to_just_peanuts",
+  "allergies_test.py::AllergiesTest::test_allergic_to_just_strawberries",
+  "allergies_test.py::AllergiesTest::test_allergic_to_lots_of_stuff",
+  "allergies_test.py::AllergiesTest::test_allergic_to_more_than_eggs_but_not_peanuts",
+  "allergies_test.py::AllergiesTest::test_ignore_non_allergen_score_parts",
+  "allergies_test.py::AllergiesTest::test_ignore_non_allergen_score_parts_only_eggs",
+  "allergies_test.py::AllergiesTest::test_is_allergic_to_eggs",
+  "allergies_test.py::AllergiesTest::test_no_allergies_at_all",
+  "allergies_test.py::AllergiesTest::test_no_allergies_means_not_allergic"
+]

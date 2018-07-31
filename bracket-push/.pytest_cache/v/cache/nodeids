@@ -1,0 +1,17 @@
+[
+  "bracket_push_test.py::BracketPushTest::test_complex_latex_expression",
+  "bracket_push_test.py::BracketPushTest::test_empty_string",
+  "bracket_push_test.py::BracketPushTest::test_math_expression",
+  "bracket_push_test.py::BracketPushTest::test_paired_and_nested_brackets",
+  "bracket_push_test.py::BracketPushTest::test_paired_and_wrong_nested_brackets",
+  "bracket_push_test.py::BracketPushTest::test_paired_square_brackets",
+  "bracket_push_test.py::BracketPushTest::test_paired_with_whitespace",
+  "bracket_push_test.py::BracketPushTest::test_partially_paired_brackets",
+  "bracket_push_test.py::BracketPushTest::test_several_paired_brackets",
+  "bracket_push_test.py::BracketPushTest::test_simple_nested_brackets",
+  "bracket_push_test.py::BracketPushTest::test_unopened_closing_brackets",
+  "bracket_push_test.py::BracketPushTest::test_unpaired_and_nested_brackets",
+  "bracket_push_test.py::BracketPushTest::test_unpaired_brackets",
+  "bracket_push_test.py::BracketPushTest::test_wrong_closing_bracket",
+  "bracket_push_test.py::BracketPushTest::test_wrong_ordered_brackets"
+]

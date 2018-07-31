@@ -1,0 +1,8 @@
+[
+  "gigasecond_test.py::GigasecondTest::test_another_date_only_specification_of_time",
+  "gigasecond_test.py::GigasecondTest::test_date_only_specification_of_time",
+  "gigasecond_test.py::GigasecondTest::test_full_time_specified",
+  "gigasecond_test.py::GigasecondTest::test_full_time_with_day_roll_over",
+  "gigasecond_test.py::GigasecondTest::test_one_more_date_only_specification_of_time",
+  "gigasecond_test.py::GigasecondTest::test_yourself"
+]

@@ -1,0 +1,6 @@
+[
+  "robot_name_test.py::RobotNameTest::test_different_robots_have_different_names",
+  "robot_name_test.py::RobotNameTest::test_has_name",
+  "robot_name_test.py::RobotNameTest::test_name_sticks",
+  "robot_name_test.py::RobotNameTest::test_reset_name"
+]

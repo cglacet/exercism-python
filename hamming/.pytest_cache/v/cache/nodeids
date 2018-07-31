@@ -1,0 +1,17 @@
+[
+  "hamming_test.py::HammingTest::test_complete_distance_in_single_nucleotide_strands",
+  "hamming_test.py::HammingTest::test_complete_distance_in_small_strands",
+  "hamming_test.py::HammingTest::test_disallow_first_strand_longer",
+  "hamming_test.py::HammingTest::test_disallow_second_strand_longer",
+  "hamming_test.py::HammingTest::test_empty_strands",
+  "hamming_test.py::HammingTest::test_identical_strands",
+  "hamming_test.py::HammingTest::test_large_distance",
+  "hamming_test.py::HammingTest::test_large_distance_in_off_by_one_strand",
+  "hamming_test.py::HammingTest::test_long_identical_strands",
+  "hamming_test.py::HammingTest::test_non_unique_character_in_first_strand",
+  "hamming_test.py::HammingTest::test_non_unique_character_in_second_strand",
+  "hamming_test.py::HammingTest::test_same_nucleotides_in_different_positions",
+  "hamming_test.py::HammingTest::test_small_distance",
+  "hamming_test.py::HammingTest::test_small_distance_in_long_strands",
+  "hamming_test.py::HammingTest::test_small_distance_in_small_strands"
+]

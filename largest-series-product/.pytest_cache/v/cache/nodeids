@@ -1,0 +1,18 @@
+[
+  "largest_series_product_test.py::LargestSeriesProductTest::test_can_find_the_largest_product_of_2",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_can_find_the_largest_product_of_2_with_numbers_in_order",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_can_find_the_largest_product_of_3",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_can_find_the_largest_product_of_3_with_numbers_in_order",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_can_find_the_largest_product_of_5_with_numbers_in_order",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_can_get_the_largest_product_of_a_big_number",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_finds_the_largest_product_if_span_equals_length",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_project_euler_big_number",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_rejects_empty_string_and_nonzero_span",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_rejects_invalid_character_in_digits",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_rejects_negative_span",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_rejects_span_longer_than_string_length",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_reports_1_for_empty_string_and_empty_product_0_span",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_reports_1_for_nonempty_string_and_empty_product_0_span",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_reports_zero_if_all_spans_include_zero",
+  "largest_series_product_test.py::LargestSeriesProductTest::test_reports_zero_if_the_only_digits_are_zero"
+]

@@ -1,0 +1,11 @@
+[
+  "series_test.py::SeriesTest::test_empty_series_is_invalid",
+  "series_test.py::SeriesTest::test_slice_length_cannot_be_negative",
+  "series_test.py::SeriesTest::test_slice_length_cannot_be_zero",
+  "series_test.py::SeriesTest::test_slice_length_is_too_large",
+  "series_test.py::SeriesTest::test_slices_can_include_duplicates",
+  "series_test.py::SeriesTest::test_slices_of_one_from_one",
+  "series_test.py::SeriesTest::test_slices_of_one_from_two",
+  "series_test.py::SeriesTest::test_slices_of_two",
+  "series_test.py::SeriesTest::test_slices_of_two_overlap"
+]

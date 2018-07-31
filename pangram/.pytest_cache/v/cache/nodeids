@@ -1,0 +1,12 @@
+[
+  "pangram_test.py::PangramTest::test_another_missing_character",
+  "pangram_test.py::PangramTest::test_missing_character_x",
+  "pangram_test.py::PangramTest::test_missing_letters_replaced_by_numbers",
+  "pangram_test.py::PangramTest::test_pangram_with_mixedcase_and_punctuation",
+  "pangram_test.py::PangramTest::test_pangram_with_numbers",
+  "pangram_test.py::PangramTest::test_pangram_with_only_lower_case",
+  "pangram_test.py::PangramTest::test_pangram_with_underscores",
+  "pangram_test.py::PangramTest::test_recognizes_a_perfect_lower_case_pangram",
+  "pangram_test.py::PangramTest::test_sentence_empty",
+  "pangram_test.py::PangramTest::test_upper_and_lower_case_versions_of_the_same_character"
+]

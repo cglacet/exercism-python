@@ -1,0 +1,8 @@
+[
+  "collatz_conjecture_test.py::CollatzConjectureTest::test_divide_if_even",
+  "collatz_conjecture_test.py::CollatzConjectureTest::test_even_and_odd_steps",
+  "collatz_conjecture_test.py::CollatzConjectureTest::test_large_number_of_even_and_odd_steps",
+  "collatz_conjecture_test.py::CollatzConjectureTest::test_negative_number_is_invalid_input",
+  "collatz_conjecture_test.py::CollatzConjectureTest::test_zero_is_invalid_input",
+  "collatz_conjecture_test.py::CollatzConjectureTest::test_zero_steps_for_one"
+]

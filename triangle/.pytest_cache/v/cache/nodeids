@@ -1,0 +1,19 @@
+[
+  "triangle_test.py::is_equilateralTests::test_false_if_all_sides_are_zero",
+  "triangle_test.py::is_equilateralTests::test_false_if_any_side_is_unequal",
+  "triangle_test.py::is_equilateralTests::test_false_if_no_sides_are_equal",
+  "triangle_test.py::is_equilateralTests::test_sides_may_be_floats",
+  "triangle_test.py::is_equilateralTests::test_true_if_all_sides_are_equal",
+  "triangle_test.py::is_isoscelesTests::test_false_if_no_sides_are_equal",
+  "triangle_test.py::is_isoscelesTests::test_is_equilateral_triangles_are_also_is_isosceles",
+  "triangle_test.py::is_isoscelesTests::test_sides_may_be_floats",
+  "triangle_test.py::is_isoscelesTests::test_true_if_first_and_last_sides_are_equal",
+  "triangle_test.py::is_isoscelesTests::test_true_if_first_two_sides_are_equal",
+  "triangle_test.py::is_isoscelesTests::test_true_if_last_two_sides_are_equal",
+  "triangle_test.py::is_isoscelesTests::test_violation_of_triangle_inequality_not_is_isosceles",
+  "triangle_test.py::is_scaleneTests::test_false_if_all_sides_are_equal",
+  "triangle_test.py::is_scaleneTests::test_false_if_two_sides_are_equal",
+  "triangle_test.py::is_scaleneTests::test_sides_may_be_floats",
+  "triangle_test.py::is_scaleneTests::test_true_if_no_sides_are_equal",
+  "triangle_test.py::is_scaleneTests::test_violation_of_triangle_inequality_not_is_scalene"
+]

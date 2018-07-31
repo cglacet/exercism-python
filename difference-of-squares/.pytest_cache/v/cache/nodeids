@@ -1,0 +1,11 @@
+[
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_difference_of_squares_1",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_difference_of_squares_100",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_difference_of_squares_5",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_square_of_sum_1",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_square_of_sum_100",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_square_of_sum_5",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_sum_of_squares_1",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_sum_of_squares_100",
+  "difference_of_squares_test.py::DifferenceOfSquaresTest::test_sum_of_squares_5"
+]

@@ -1,0 +1,10 @@
+[
+  "flatten_array_test.py::FlattenArrayTest::test_all_values_are_none",
+  "flatten_array_test.py::FlattenArrayTest::test_empty_nested_lists",
+  "flatten_array_test.py::FlattenArrayTest::test_five_level_nesting",
+  "flatten_array_test.py::FlattenArrayTest::test_flatten_integers",
+  "flatten_array_test.py::FlattenArrayTest::test_no_nesting",
+  "flatten_array_test.py::FlattenArrayTest::test_six_level_nesting",
+  "flatten_array_test.py::FlattenArrayTest::test_strings",
+  "flatten_array_test.py::FlattenArrayTest::test_with_none_values"
+]
