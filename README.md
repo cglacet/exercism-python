@@ -1,7 +1,7 @@
 # exercism-python
 My answers for the exercism.io python track. You can find my profile over here [exercism.io/cglacet](https://exercism.io/profiles/cglacet)
 
-## Exercism.io principle
+## You should try Exercism.io
 [Exercism.io](https://exercism.io) is an online learning platform with __feedback__. The feedback comes from experimented _mentors_ in the specific language that you choose. The main drawback when learning online is the lack of feedback, you can develop bad habits without even having a chance to be notified about it. I think exercism.io is a good idea to try solving that missing bit in online learning.  
 
 The process is simple:
