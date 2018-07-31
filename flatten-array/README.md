@@ -58,8 +58,8 @@ with the iterative form.
 My solution simply use a stack in which I will store cursors that indicate positions in iterable.
 A cursor simply is an (address, index) pair, with the address being the currently
 traversed array's address and index is the position within that array. Note that if we were
-using [numpy](http://www.numpy.org/) arrays we could even just store the cursor position as the address of the
-current sublist being traversed, note the difference:
+using [numpy](http://www.numpy.org/) arrays we could even just store the cursor's position as the address of the
+current sublist being traversed. _Why?_ Note the difference:
 ```python
 L = [1,2,5,4]
 cursor = L[2:]
@@ -77,9 +77,9 @@ cursor[0] = 3
 ```
 > array([1, 2, 3, 4])
 
-With numpy `cursor = L[2:]` doesn't copy the array, it saves a reference in the
+With numpy, `cursor = L[2:]`, doesn't copy the array, it saves a reference in the
 middle of the array, which in our case is exactly what we would like. But I won't
-use numpy, simply because numpy has a [flatten function](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.flatten.html),
+use numpy, simply because numpy already has a [flatten function](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.flatten.html),
 it would make no sense to partially use numpy.
 
 The [final solution](flatten_array.py) redefined `flatten` as (the rest of the code is unchanged):
