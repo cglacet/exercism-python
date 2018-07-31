@@ -65,3 +65,17 @@ class Matrix:
 def saddle_points(data):
     matrix = Matrix(data)
     return matrix.saddle_points()
+
+if __name__ == "__main__":
+    import numpy
+    # saddle_points([
+    #     [9, 8, 7],
+    #     [5, 3, 2],
+    #     [6, 6, 7]
+    # ])
+    m = numpy.array([0,0,0,0])
+    sub_m = m[:]
+    sub_m[0] = 1
+    print(m)
+    print("sub_m address =",hex(id(sub_m[0])))
+    print("sub_m_2 address =",hex(id(m[0])))

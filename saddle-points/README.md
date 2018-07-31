@@ -148,32 +148,35 @@ def data(self):
 The slice operator `[<start>:<end>]` doesn't return a reference but a copy of the input array.
 Therefore `data` and `m.data` are two distinct lists.
 ```python
-m = Matrix([[1,2]])
-data = m.data
-print("data address =",hex(id(data)))
-print("m.data address =", hex(id(m.data)))
+m = [0,0,0,0]
+sub_m = m[:]
+sub_m[0] = 1
+print(m)
+print("m[0] address =",hex(id(m[0])))
+print("sub_m[0] address =",hex(id(sub_m[0])))
 ```
 Prints:
 ```python
-data address = 0x1099b2048
-m.data address = 0x10999ee88
+[0, 0, 0, 0]
+sub_m address = 0x102ed4a80
+sub_m_2 address = 0x102ed4a60
 ```
 
 Notice that `numpy` does return a reference when slicing:
 ```python
-m = numpy.array([1,2,5,4])
+m = numpy.array([0,0,0,0])
 sub_m = m[:]
-sub_m[2] = 3
+sub_m[0] = 1
 print(m)
-print("m address =",hex(id(m)))
-print("sub_m address =", hex(id(sub_m)))
+print("m[0] address =",hex(id(m[0])))
+print("sub_m[0] address =",hex(id(sub_m[0])))
 ```
 
 This would print:
 ```python
-[1 2 3 4]
-data address = 0x109099a80
-m.data address = 0x109099ad0
+[1 0 0 0]
+sub_m address = 0x110995ba0
+sub_m_2 address = 0x110995ba0
 ```
 </details>
 
