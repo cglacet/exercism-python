@@ -1,0 +1,9 @@
+[
+  "saddle_points_test.py::SaddlePointsTest::test_empty_matrix_has_no_saddle_points",
+  "saddle_points_test.py::SaddlePointsTest::test_identify_lack_of_saddle_points_when_there_are_none",
+  "saddle_points_test.py::SaddlePointsTest::test_identify_multiple_saddle_points_in_column",
+  "saddle_points_test.py::SaddlePointsTest::test_identify_multiple_saddle_points_in_row",
+  "saddle_points_test.py::SaddlePointsTest::test_identify_saddle_point_in_bottom_right_corner",
+  "saddle_points_test.py::SaddlePointsTest::test_identify_single_saddle_point",
+  "saddle_points_test.py::SaddlePointsTest::test_irregular_matrix"
+]

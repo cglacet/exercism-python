@@ -26,6 +26,62 @@ saddle points for any given matrix.
 Note that you may find other definitions of matrix saddle points online,
 but the tests for this exercise follow the above unambiguous definition.
 
+## My solution
+
+Here I just wanted to have something that could be used for more matrix operations.
+I thus created a `Matrix` with the goal of having a `saddle_points` method as
+simple as possible with the algorithm as clear as possible:
+```python
+is_row_max = self.is_row(condition=max)
+is_col_min = self.is_col(condition=min)
+is_saddle = is_row_max & is_col_min
+return set(self.index_where(is_saddle))
+```
+
+For an input matrix `self`:
+```python
+Matrix(
+	[9, 8, 7],
+	[5, 3, 2],
+	[6, 6, 7]
+)
+```
+The first matrix I compute, `is_row_max` is such that if `is_row_max[i,j]` is `True`
+then `self[i,j]` is (one of) the maximum(s) within its row.
+```python
+Matrix(
+	[True, False, False],
+	[True, False, False],
+	[False, False, True]
+)
+```
+The second matrix, `is_col_min` represents the same thing `min` values within columns:
+```python
+Matrix(
+	[False, False, False],
+	[True, True, True],
+	[False, False, False]
+)
+```
+Finally `is_saddle[i, j]` will be true if both `is_row_max[i,j]`
+and `is_col_min[i,j]` are true (notice that you need to implement the _magic_ method `__and__`
+for `is_row_max & is_col_min` to work). The matrix `is_saddle` is the following:
+```python
+Matrix(
+	[False, False, False],
+	[True, False, False],
+	[False, False, False]
+)
+```
+Here you can notice that the only index at which we can find a saddle point is
+`(1, 0)`.
+>	[9, _8_, 7],
+>	[5, 3, 2],
+>	[6, 6, 7]
+
+
+
+
 ## Exception messages
 
 Sometimes it is necessary to raise an exception. When you do this, you should include a meaningful error message to
