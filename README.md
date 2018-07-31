@@ -2,17 +2,17 @@
 My answers for the exercism.io python track. You can find my profile over here [exercism.io/cglacet](https://exercism.io/profiles/cglacet)
 
 ## Exercism.io principle
-The main idea of [exercism.io](https://exercism.io) is to provide an online learning tool with __feedback__. The feedback comes from experimented _mentors_ in the specific langage that you choose. The main drawback when learning online is the lack of feedback, you can develop bad habits without even having a chance to be notified about it. I think exercism.io is a good idea to try solving that missing bit in online learning.  
+[Exercism.io](https://exercism.io) is an online learning platform with __feedback__. The feedback comes from experimented _mentors_ in the specific language that you choose. The main drawback when learning online is the lack of feedback, you can develop bad habits without even having a chance to be notified about it. I think exercism.io is a good idea to try solving that missing bit in online learning.  
 
 The process is simple:
 __(i)__ you pick and download an exercise (_eg._, [kindergarten-garden](kindergarten-garden)),
 __(ii)__ you solve and upload it,
 __(iii)__ a mentor gives you feedback and you both work on improving the solution.
 
-Mentoring is oriented tower langage specific questions, but you also can get advises on complexity (algorithmic) issues.
+Mentoring is oriented tower language specific questions, but you also can get advises on complexity (algorithmic) issues.
 <details>
 <summary>
-Here is an example of exchange I had with a mentor on handeling optional parameters in python:
+Here is an example of exchange I had with a mentor on handling optional parameters in python:
 </summary>
 > __Mentor__
 >
