@@ -28,6 +28,9 @@ but the tests for this exercise follow the above unambiguous definition.
 
 ## My solution
 
+
+### The implementation
+
 Here I just wanted to have something that could be used for more matrix operations.
 I thus created a `Matrix` with the goal of having a `saddle_points` method as
 simple as possible with the algorithm as clear as possible:
@@ -36,8 +39,11 @@ def saddle_points(self):
    is_row_max = self.is_row(condition=max)
    is_col_min = self.is_col(condition=min)
    is_saddle = is_row_max & is_col_min
-   return set(self.index_where(is_saddle))
+   saddle_indexes = set(self.index_where(is_saddle))
+   return saddle_indexes
 ```
+
+### What it does
 
 For an input matrix `self`:
 ```python
@@ -75,13 +81,14 @@ Matrix(
 )
 ```
 Here you can notice that the only index at which we can find a saddle point is
-`(1, 0)`.
->	[9, _8_, 7],
->	[5, 3, 2],
->	[6, 6, 7]
-
-
-
+`(1, 0)` (_**5** > 3 > 2_ and _**5** < 6 < 9_ therefore it's a valid saddle point).
+```python
+Matrix(
+	[9, 8, 7],
+	[5, 3, 2],
+	[6, 6, 7]
+)
+```
 
 ## Exception messages
 

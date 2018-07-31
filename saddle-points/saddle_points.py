@@ -32,8 +32,9 @@ class Matrix:
         print("Columns min:", col_argmin)
         is_saddle = row_argmax & col_argmin
         print("is Saddle", is_saddle)
-        print("Indexes = ", set(self.index_where(is_saddle)))
-        return set(self.index_where(is_saddle))
+        saddle_indexes = set(self.index_where(is_saddle))
+        print([self[index] for index in saddle_indexes])
+        return saddle_indexes
 
     def index_where(self, condition):
         for i, row in enumerate(self._data):
