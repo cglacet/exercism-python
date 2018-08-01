@@ -82,5 +82,5 @@ Exercises from the main track are:
 Extra exercises that I think are interesting:
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [bank-account](bank-account) ([_.py solution_](bank-account/bank_account.py)): decorators and errors:
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [flatten-array](flatten-array) ([_.py solution_](flatten-array/flatten_array.py)): Python stack discussion (iterative array flattening)
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [binary search tree](binary-search-tree) ([_.py solution_](binary-search-tree/binary_search_tree.py): basically a simpler version of the array flattening problem (same techniques involved)
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py) Interesting algorithmic problem (if you have a simpler solution I'm interested)
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [binary search tree](binary-search-tree) ([_.py solution_](binary-search-tree/binary_search_tree.py)): basically a simpler version of the array flattening problem (same techniques involved)
+ - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py)): interesting algorithmic problem (if you have a simpler solution I'm interested)
