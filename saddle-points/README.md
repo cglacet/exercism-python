@@ -158,8 +158,8 @@ print("sub_m[0] address =",hex(id(sub_m[0])))
 Prints:
 ```python
 [0, 0, 0, 0]
-sub_m address = 0x102ed4a80
-sub_m_2 address = 0x102ed4a60
+m[0] address = 0x102ed4a80
+sub_m[0] address = 0x102ed4a60
 ```
 
 Notice that `numpy` does return a reference when slicing:
@@ -175,8 +175,8 @@ print("sub_m[0] address =",hex(id(sub_m[0])))
 This would print:
 ```python
 [1 0 0 0]
-sub_m address = 0x110995ba0
-sub_m_2 address = 0x110995ba0
+m[0] address = 0x110995ba0
+sub_m[0] address = 0x110995ba0
 ```
 </details>
 
