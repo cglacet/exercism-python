@@ -36,9 +36,9 @@ I thus created a `Matrix` with the goal of having a `saddle_points` method as
 simple as possible with the algorithm as clear as possible:
 ```python
 def saddle_points(self):
-   is_row_max = self.is_row(condition=max)
-   is_col_min = self.is_col(condition=min)
-   is_saddle = is_row_max & is_col_min
+   is_max_in_row = self.is_cell(condition=max, within=Axis.ROW)
+   is_min_in_col = self.is_cell(condition=min, within=Axis.COLUMN)
+   is_saddle = is_max_in_row & is_min_in_col
    saddle_indexes = set(self.index_where(is_saddle))
    return saddle_indexes
 ```
@@ -80,8 +80,8 @@ Matrix(
 	[False, False, False]
 )
 ```
-Here you can notice that the only index at which we can find a saddle point is
-`(1, 0)` (_**5** > 3 > 2_ and _**5** < 6 < 9_ therefore it's a valid saddle point).
+Here you can notice that the only index at which a saddle point has been found is
+`(1, 0)` (_**5** > 3 > 2_ and _**5** < 6 < 9_ which make it a valid saddle point).
 ```python
 Matrix(
 	[9, 8, 7],
@@ -90,7 +90,7 @@ Matrix(
 )
 ```
 
-### What you can have a look at
+### Remarks on implementation details (python stuff)
 
 #### Kind of immutable
 

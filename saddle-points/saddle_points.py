@@ -1,8 +1,13 @@
+from enum import Enum
+
 def apply(array, function=None):
     if function is None:
         return array
     return [function(v) for v in array]
 
+class Axis(Enum):
+    ROW = 1
+    COLUMN = 2
 
 class Matrix:
     def __init__(self, data):
@@ -25,9 +30,9 @@ class Matrix:
         """A "saddle point" is greater than or equal to every element in its row
         and less than or equal to every element in its column.
         """
-        row_argmax = self.is_row(condition=max)
-        col_argmin = self.is_col(condition=min)
-        is_saddle = row_argmax & col_argmin
+        is_max_in_row = self.is_cell(condition=max, within=Axis.ROW)
+        is_min_in_col = self.is_cell(condition=min, within=Axis.COLUMN)
+        is_saddle = is_max_in_row & is_min_in_col
         saddle_indexes = set(self.index_where(is_saddle))
         return saddle_indexes
 
@@ -37,11 +42,19 @@ class Matrix:
                 if condition[i, j]:
                     yield (i, j)
 
-    def is_row(self, condition=min):
-        return Matrix([apply(row, function=lambda x, r=row: x == condition(r)) for row in self._data])
+    def is_cell(self, condition=lambda x: x is not None, within=None):
+        if within not in Axis:
+            raise ValueError("You must define a valid axis `within`, accepted values are:", Axis)
+        if within == Axis.ROW:
+            return self.is_cell_row_condition(condition)
+        elif within == Axis.COLUMN:
+            return self.is_cell_col_condition(condition)
 
-    def is_col(self, condition=min):
-        return self.T.is_row(condition=condition).T
+    def is_cell_row_condition(self, condition):
+        return Matrix([apply(row, function=lambda x, value=condition(row): x == value) for row in self._data])
+
+    def is_cell_col_condition(self, condition):
+        return self.T.is_cell_row_condition(condition).T
 
     @staticmethod
     def _shape_raise_for_error(data):
@@ -67,15 +80,8 @@ def saddle_points(data):
     return matrix.saddle_points()
 
 if __name__ == "__main__":
-    import numpy
-    # saddle_points([
-    #     [9, 8, 7],
-    #     [5, 3, 2],
-    #     [6, 6, 7]
-    # ])
-    m = numpy.array([0,0,0,0])
-    sub_m = m[:]
-    sub_m[0] = 1
-    print(m)
-    print("sub_m address =",hex(id(sub_m[0])))
-    print("sub_m_2 address =",hex(id(m[0])))
+    print(saddle_points([
+        [9, 8, 7],
+        [5, 3, 2],
+        [6, 6, 7]
+    ]))
