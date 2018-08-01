@@ -51,7 +51,7 @@ class Matrix:
             return self.is_cell_col_condition(condition)
 
     def is_cell_row_condition(self, condition):
-        return Matrix([apply(row, function=lambda x, value=condition(row): x == value) for row in self._data])
+        return Matrix([apply(row, function=lambda x, test_value=condition(row): x == test_value) for row in self._data])
 
     def is_cell_col_condition(self, condition):
         return self.T.is_cell_row_condition(condition).T
