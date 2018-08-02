@@ -47,7 +47,7 @@ with a recursive function.
 
 You can find solutions for tail recursion elimination online, for example
 [here](), but I made the choice to implement it with an iterative solution because
-it's more fun. Also Guido himself said that he didn't like the approach:
+it's more fun. Also Guido himself said that [he didn't like the approach](http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html):
 > Another blog post showed decorators that can be used to implement tail recursion using magical exceptions or return values. These can be written in plain Python. [...]
 > there are many caveats to the use of such a decorator, since it has to assume that any recursive call (in the decorated function) is tail-recursive and can be eliminated. [...]
 > For all these reasons I think the decorator approach is doomed, at least for a general audience.
