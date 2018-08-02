@@ -84,26 +84,53 @@ it would make no sense to partially use numpy.
 
 The [final solution](flatten_array.py) redefined `flatten` as (the rest of the code is unchanged):
 ```python
-def flatten(iterable):
-    return list(elements_of(iterable))
 
-def elements_of(iterable):
-    cursors = [[iterable, 0]]
-    while len(cursors) > 0:
-        cursor = cursors[-1]
-        item, i = cursor
-        # current sublist exhausted:
-        if i >= len(item):
-            cursors.pop()
-        else:
-           # entering a sublist:
-           if is_list_like(item[i]):
-               cursors.append([item[i], 0])
-           # simple item found:
-           else:
-               if item[i] is not None:
-                   yield item[i]
-           cursor[1] += 1 # "i += 1"
+def flatten(iterable):
+    """Returns a flattened list of non-list-like objects from `iterable` in DFS
+    traversal order.
+    """
+    return list(items_from(iterable))
+
+
+def items_from(iterable):
+    """Genertor that yields every non-list-like objects from `iterable` in DFS
+    traversal order.
+    """
+    # The base idea is to mimic the python stack with `cursors`. This function
+    # iterate the inpute `iterable` in DFS order starting from the root
+    # (`iterable`) and going from the left-most item (``iterable[0]``) to the right-most
+    # item (``iterable[-1]``). During traversal, two kinds of node will be met,
+    # list-like (`sub_iterable`) objects and simple `item`s.
+    #
+    # PRE   When the traversal gets to a sub-iterable (a subtree), a new cursor is
+    #       pused to `cursor_stack`.
+    # IN    When a simple `item` is traversed it's yield.
+    # POST  When a sub-iterable is consumed (the subtree has completely traversed),
+    #       the cursor goes back to the root of the corresponding subtree.
+    #
+    #       iterable = [0, [1,2], 3, 4]
+    #
+    #                    I
+    #                    |
+    #           -------------------
+    #           |     |     |     |
+    #           0   --I--   3     4
+    #               |   |
+    #               1   2
+    #
+    # This tree contains two `sub_iterables` ('I') and five items ('0', '1', '2', '3', '4').
+    cursor_stack = [iter(iterable)]
+    while cursor_stack:
+        sub_iterable = cursor_stack[-1]
+        try:
+            item = next(sub_iterable)
+        except StopIteration:   # post-order
+            cursor_stack.pop()
+            continue
+        if is_list_like(item):  # pre-order
+            cursor_stack.append(iter(item))
+        elif item is not None:
+            yield item          # in-order
 ```
 
 In terms of complexity, with _n_ being the total
