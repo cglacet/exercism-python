@@ -17,30 +17,30 @@ The internal process used to find Saddle points is located in function `saddle_p
 and apply the following steps:
 
 Finding "row's max.", a column vector equal to [9, 5, 7], and use if to compute a boolean
-matrix in which each cell (i,j) is `True` if this cell's value is the maximum value it
-its own row. This second operation is done using `match`:
-      [ 9 ]      match     [ 9 8 7 ]    =   [ O . . ]
-      [ 5 ]                [ 5 3 2 ]        [ O . . ]
-      [ 7 ]                [ 6 6 7 ]        [ . . O ]
+matrix in which each cell (i,j) is `True` if this cell's value is the maximum value of
+its own row. This second operation is done using `flag_projected_matches`:
+      [ 9 ]      flag_projected_matches     [ 9 8 7 ]    =   [ O . . ]
+      [ 5 ]                                 [ 5 3 2 ]        [ O . . ]     =    A
+      [ 7 ]                                 [ 6 6 7 ]        [ . . O ]
 
+                                                      ("O" match, "." otherwise)
 
 The same is done for "column's min.", we first compute the row vector representing min.
-column values and then compute the boolean mask using `match`:
-    [ 5 3 2 ]    match     [ 9 8 7 ]   =   [ . . . ]
-                           [ 5 3 2 ]       [ O O O ]
-                           [ 6 6 7 ]       [ . . . ]
+column values and then compute the boolean mask using `flag_projected_matches`:
+    [ 5 3 2 ]    flag_projected_matches     [ 9 8 7 ]    =   [ . . . ]
+                                            [ 5 3 2 ]        [ O O O ]    =     B
+                                            [ 6 6 7 ]        [ . . . ]
 
-
-Once we have these two boolean matrix, we just need to find cells where both conditions
-are met to find Saddle points (using the logical `&` operator):
+Once we have these two boolean matrix, in order to find Saddle points we just need
+to find cells for which both conditions (A and B) are met (using the logical `&` operator):
   [ O . . ]     &     [ . . . ]   =   [ . . . ]
   [ O . . ]           [ O O O ]       [ O . . ]
   [ . . O ]           [ . . . ]       [ . . . ]
 
 Finally, Saddle points coordinates are retrieved using the `where` method on this last matrix:
-  [ . . . ]
-  [ O . . ]   where   {(1, 0)}
-  [ . . . ]
+          [ . . . ]
+  where   [ O . . ]   =   {(1, 0)}
+          [ . . . ]
 """
 from enum import Enum
 from collections import namedtuple
@@ -52,9 +52,9 @@ def saddle_points(data):
     and less than or equal to every element in its column.
     """
     matrix = Matrix2D(data)
-    rows_maximums = matrix.axis_map_reduce(Matrix2D.Axes.ROW, max)
+    rows_maximums = matrix.axis_reduce(Matrix2D.Axes.ROW, max)
     is_max_in_row = matrix.flag_projected_matches(rows_maximums)
-    columns_minimums = matrix.axis_map_reduce(Matrix2D.Axes.COLUMN, min)
+    columns_minimums = matrix.axis_reduce(Matrix2D.Axes.COLUMN, min)
     is_min_in_col = matrix.flag_projected_matches(columns_minimums)
     is_saddle = is_max_in_row & is_min_in_col
     saddle_indexes = set(is_saddle.where())
@@ -121,7 +121,7 @@ class Matrix2D:
             self._transpose = Matrix2D(list(map(list, zip(*self))))
         return self._transpose
 
-    def axis_map_reduce(self, axis, function):
+    def axis_reduce(self, axis, function):
         """Reduce the matrix using `function`. The optional parameter `axis`
         allows to reduce only along the given axis.
 
@@ -138,17 +138,17 @@ class Matrix2D:
     def flag_projected_matches(self, vector):
         """Each row/column of the input matrix is compared to the input `vector`:
 
-        Row matching:
+        Rows matching:
 
-            [1 2 3]    match    [1 5 3]    = [O . O]
-            [4 5 3]                          [. O O]
+            [1 2 3]    flag_projected_matches    [1 5 3]    = [O . O]
+            [4 5 3]                                           [. O O]
 
-        Column matching:
+        Columns matching:
 
-            [1 2 3]    match      [1]      = [O . .]
-            [4 5 6]               [5]        [. O .]
+            [1 2 3]    flag_projected_matches      [1]      = [O . .]
+            [4 5 6]                                [5]        [. O .]
 
-        O shows matched items, . shows unmatched items (either it matched the vector/scalar or not).
+        O shows matched items, . shows unmatched items (either it matched the vector or not).
         The function returns a matrix where matched cells contain `True` while unmatched ones contain `False`.
         """
         return self.map_cells(lambda coordinates, cell: cell == vector[vector.projected_coordinates(coordinates)])
@@ -165,8 +165,8 @@ class Matrix2D:
         all(condition(cell) for _, cell in self.enumerate_cells())
 
     def map_cells(self, function):
-        """Returns a matrix in which `function` has been applied to all element.
-        `function` will be called with three arguments (on each cell):
+        """Returns a matrix in which `function` has been applied to all elements.
+        `function` will be called with the three following arguments (on each cell):
             - the `cell` value,
             - the row index and the
             - the column index.
@@ -186,9 +186,7 @@ class Matrix2D:
             return False
         return self.map_cells(lambda coordinates, cell: cell == other[coordinates]).all()
 
-    def _binary_operation(self, other, operation=None):
-        if not operation:
-            raise ValueError("Please provide a function.")
+    def _binary_operation(self, other, operation):
         return Matrix2D([[operation(a, b) for (a, b) in zip(*rows)] for rows in zip(self, other)])
 
     def __and__(self, other):
