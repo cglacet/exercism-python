@@ -18,17 +18,17 @@ and apply the following steps:
 
 Finding "row's max.", a column vector equal to [9, 5, 7], and use if to compute a boolean
 matrix in which each cell (i,j) is `True` if this cell's value is the maximum value it
-its own row. This second operation is done using `match`:
-      [ 9 ]      match     [ 9 8 7 ]    =   [ O . . ]
-      [ 5 ]                [ 5 3 2 ]        [ O . . ]
-      [ 7 ]                [ 6 6 7 ]        [ . . O ]
+its own row. This second operation is done using the `match` function:
+  [ 9 8 7 ]   match   [ 9 ]   =   [ O . . ]
+  [ 5 3 2 ]           [ 5 ]       [ O . . ]
+  [ 6 6 7 ]           [ 7 ]       [ . . O ]
 
 
 The same is done for "column's min.", we first compute the row vector representing min.
-column values and then compute the boolean mask using `match`:
-    [ 5 3 2 ]    match     [ 9 8 7 ]   =   [ . . . ]
-                           [ 5 3 2 ]       [ O O O ]
-                           [ 6 6 7 ]       [ . . . ]
+column values and then compute the boolean mask using the `match` function:
+  [ 9 8 7 ]   match   [ 5 3 2 ]   =   [ . . . ]
+  [ 5 3 2 ]                           [ O O O ]
+  [ 6 6 7 ]                           [ . . . ]
 
 
 Once we have these two boolean matrix, we just need to find cells where both conditions
@@ -43,7 +43,6 @@ Finally, Saddle points coordinates are retrieved using the `where` method on thi
   [ . . . ]
 """
 from enum import Enum
-from collections import namedtuple
 from textwrap import indent
 
 
@@ -52,10 +51,10 @@ def saddle_points(data):
     and less than or equal to every element in its column.
     """
     matrix = Matrix2D(data)
-    rows_maximums = matrix.axis_map_reduce(Matrix2D.Axes.ROW, max)
-    is_max_in_row = matrix.flag_projected_matches(rows_maximums)
-    columns_minimums = matrix.axis_map_reduce(Matrix2D.Axes.COLUMN, min)
-    is_min_in_col = matrix.flag_projected_matches(columns_minimums)
+    rows_maximums = matrix.reduce(Matrix2D.Axes.ROW, max)
+    is_max_in_row = matrix.match(rows_maximums)
+    columns_minimums = matrix.reduce(Matrix2D.Axes.COLUMN, min)
+    is_min_in_col = matrix.match(columns_minimums)
     is_saddle = is_max_in_row & is_min_in_col
     saddle_indexes = set(is_saddle.where())
 
@@ -68,37 +67,37 @@ def saddle_points(data):
     return saddle_indexes
 
 
-Coordinates = namedtuple('Coordinates', ['x', 'y'])
-Shape = namedtuple('Shape', ['row', 'column'])
+class Vector(list):
+    """Adds a 2D-orientation to a list. This is usefull when dealing with matrices."""
+    def __init__(self, *args, axis=None):
+        if axis not in Matrix2D.Axes:
+            raise ValueError("{} is not valid `axis`, accepted values are:".format(Matrix2D.Axes))
+        list.__init__(self, *args)
+        self.axis = axis
+        self.shape = (0, len(self)) if self.is_row else (len(self), 0)
 
-
-class RowVector(list):
-    """An orientation aware list."""
     def is_matrix_compatible(self, matrix):
-        """Returns `True` if the input `matrix` has the same row shape as the `RowVector`."""
-        return matrix.shape.column == len(self)
+        """Returns `True` if the input `matrix` has the same row (/colum) shape as the row (/column) `Vector`."""
+        return matrix.shape[self.axis_index] == self.shape[self.axis_index]
 
-    @staticmethod
-    def projected_coordinates(coordinates):
-        """Returns the 1D coordinates projected any multidimensional coordinates in the `RowVector`'s space."""
-        return coordinates.y
+    @property
+    def axis_index(self):
+        """Returns the axis index that corresponds the this `Vector` axis."""
+        return 0 if self.is_column else 1
+
+    @property
+    def is_row(self):
+        """True if this is a row-vector"""
+        return self.axis == Matrix2D.Axes.ROW
+
+    @property
+    def is_column(self):
+        """True if this is a column-vector"""
+        return self.axis == Matrix2D.Axes.COLUMN
 
     def __repr__(self):
-        return Matrix2D.repr([self])
-
-
-class ColumnVector(list):
-    """An orientation aware list."""
-    def is_matrix_compatible(self, matrix):
-        """Returns `True` if the input `matrix` has the same colum shape as the `ColumnVector`."""
-        return matrix.shape.row == len(self)
-
-    @staticmethod
-    def projected_coordinates(coordinates):
-        """Returns the 1D coordinates projected any multidimensional coordinates in the `ColumnVector`'s space."""
-        return coordinates.x
-
-    def __repr__(self):
+        if self.is_row:
+            return Matrix2D.repr([self])
         return Matrix2D.repr(zip(self))
 
 
@@ -115,13 +114,18 @@ class Matrix2D:
         self._transpose = None
 
     @property
+    def data(self):
+        """Returns a copy of the matrix raw content."""
+        return self[:]
+
+    @property
     def T(self):
         """Returns the transposed matrix."""
         if self._transpose is None:
             self._transpose = Matrix2D(list(map(list, zip(*self))))
         return self._transpose
 
-    def axis_map_reduce(self, axis, function):
+    def reduce(self, axis, function):
         """Reduce the matrix using `function`. The optional parameter `axis`
         allows to reduce only along the given axis.
 
@@ -132,11 +136,42 @@ class Matrix2D:
         is returned when reducing columns.
         """
         if axis is Matrix2D.Axes.ROW:
-            return ColumnVector(function(v) for v in self)
-        return RowVector(function(v) for v in self.T)
+            matrix = self
+            vector_axis = Matrix2D.Axes.COLUMN
+        else:
+            matrix = self.T
+            vector_axis = Matrix2D.Axes.ROW
+        return Vector([function(v) for v in matrix], axis=vector_axis)
 
-    def flag_projected_matches(self, vector):
-        """Each row/column of the input matrix is compared to the input `vector`:
+    def map(self, function):
+        """Returns a matrix in which `function` has been applied to all element.
+        `function` will be called with three arguments (on each cell):
+            - the `cell` value,
+            - the row index and the
+            - the column index.
+        """
+        return Matrix2D([[function(cell, i, j) for j, cell in enumerate(row)] for i, row in enumerate(self)])
+
+    def where(self, condition=lambda x: x):
+        """Returns a generator that goes over cells that satisfy `condition`."""
+        for coordinates, cell in self.enumarate_cells():
+            if condition(cell):
+                yield coordinates
+
+    def all(self, condition=lambda x: x):
+        """Return `True` if all cells verify `condition`, notice that the default value for `condition`
+        is the identity function."""
+        all(condition(cell) for _, cell in self.enumarate_cells())
+
+    def enumarate_cells(self):
+        """Returns a generator such that each item is one of the matrix's `(coordinates, cell)` pair."""
+        for i, row in enumerate(self):
+            for j, cell in enumerate(row):
+                yield (i, j), cell
+
+    def match(self, vector):
+        """`Matching` is some sort of matrix to row(/column) vector equality.
+        Each row/column of the input matrix is compared to the input `vector`:
 
         Row matching:
 
@@ -151,40 +186,20 @@ class Matrix2D:
         O shows matched items, . shows unmatched items (either it matched the vector/scalar or not).
         The function returns a matrix where matched cells contain `True` while unmatched ones contain `False`.
         """
-        return self.map_cells(lambda coordinates, cell: cell == vector[vector.projected_coordinates(coordinates)])
-
-    def where(self, condition=lambda x: x):
-        """Returns a generator that goes over cells that satisfy `condition`."""
-        for coordinates, cell in self.enumerate_cells():
-            if condition(cell):
-                yield Coordinates(*coordinates)
-
-    def all(self, condition=lambda x: x):
-        """Return `True` if all cells verify `condition`, notice that the default value for `condition`
-        is the identity function."""
-        all(condition(cell) for _, cell in self.enumerate_cells())
-
-    def map_cells(self, function):
-        """Returns a matrix in which `function` has been applied to all element.
-        `function` will be called with three arguments (on each cell):
-            - the `cell` value,
-            - the row index and the
-            - the column index.
-        """
-        return Matrix2D([[function(Coordinates(i, j), cell) for j, cell in enumerate(row)] for i, row in enumerate(self)])
-
-    def enumerate_cells(self):
-        """Returns a generator such that each item is one of the matrix's `(coordinates, cell)` pair."""
-        for i, row in enumerate(self):
-            for j, cell in enumerate(row):
-                yield Coordinates(i, j), cell
+        if isinstance(vector, Vector):
+            if not vector.is_matrix_compatible(self):
+                raise ValueError("Matrix and vector have incompatible shapes.")
+            return self.map(lambda cell, i, j: cell == vector[j if vector.is_row else i])
+        if isinstance(vector, list):
+            raise ValueError("Lists can't be matched (orientation ambiguity), use a `Vector` instead.")
+        return False
 
     def __eq__(self, other):
         if not isinstance(other, Matrix2D):
             return NotImplemented
         if self.shape != other.shape:
             return False
-        return self.map_cells(lambda coordinates, cell: cell == other[coordinates]).all()
+        return self.map(lambda cell, i, j: cell == other[i, j]).all()
 
     def _binary_operation(self, other, operation=None):
         if not operation:
@@ -215,9 +230,9 @@ class Matrix2D:
 
     @staticmethod
     def _shape_raise_for_error(data):
-        shape = Shape(len(data), len(data[0]) if data else 0)
+        shape = (len(data), len(data[0]) if data else 0)
         for row in data:
-            if len(row) != shape.column:
+            if len(row) != shape[1]:
                 raise ValueError("Matrix shape doesn't appear to be correct.")
         return shape
 
