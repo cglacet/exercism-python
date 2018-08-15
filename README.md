@@ -72,9 +72,9 @@ Color codes:
 
 Exercises from the main track are:
  - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [leap](leap) ([_.py solution_](leap/leap.py))
- - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [Bob](bob) ([_.py solution_](bob/bob.py))
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [allergies](allergies) ([_.py solution_](allergies/allergies.py))
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [sum of multiples](sum-of-multiples) ([_.py solution_](sum-of-multiples/sum_of_multiples.py))
+ - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [Bob](bob) ([_.py solution_](bob/bob.py))
+ - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [allergies](allergies) ([_.py solution_](allergies/allergies.py)) range and enumerate
+ - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [sum of multiples](sum-of-multiples) ([_.py solution_](sum-of-multiples/sum_of_multiples.py)) range and sum
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [kindergarten garden](kindergarten-garden) ([_.py solution_](kindergarten-garden/kindergarten_garden.py)) zip and default dictionaries
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [grade school](grade-school) ([_.py solution_](grade-school/grade_school.py)) lazzy evealuation and sorting
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [saddle points](saddle-points) ([_.py solution_](saddle-points/saddle_points.py)) object oriented programming and generators
