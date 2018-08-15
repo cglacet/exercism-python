@@ -74,13 +74,18 @@ Exercises from the main track are:
  - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [leap](leap) ([_.py solution_](leap/leap.py))
  - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [Bob](bob) ([_.py solution_](bob/bob.py))
  - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [allergies](allergies) ([_.py solution_](allergies/allergies.py))
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [sum-of-multiples](sum-of-multiples) ([_.py solution_](sum-of-multiples/sum_of_multiples.py))
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [kindergarten-garden](kindergarten-garden) ([_.py solution_](kindergarten-garden/kindergarten_garden.py))
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [grade-school](grade-school) ([_.py solution_](grade-school/grade_school.py))
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [saddle-points](saddle-points) ([_.py solution_](saddle-points/saddle_points.py))
+ - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [sum of multiples](sum-of-multiples) ([_.py solution_](sum-of-multiples/sum_of_multiples.py))
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [kindergarten garden](kindergarten-garden) ([_.py solution_](kindergarten-garden/kindergarten_garden.py))
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [grade school](grade-school) ([_.py solution_](grade-school/grade_school.py))
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [saddle points](saddle-points) ([_.py solution_](saddle-points/saddle_points.py))
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [binary search](binary-search) ([_.py solution_](binary-search/binary_search.py))
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [list operators](list-ops) ([_.py solution_](list-ops/list_ops.py))
+ - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [book store](book-store) ([_.py solution_](book-store/book_store.py))
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [24h clock](clock) ([_.py solution_](clock/clock.py))
+ - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [two fer](two-fer) ([_.py solution_](two-fer/two_fer.py))
 
 Extra exercises that I think are interesting:
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [bank-account](bank-account) ([_.py solution_](bank-account/bank_account.py)): concurrency, decorators and errors
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [flatten-array](flatten-array) ([_.py solution_](flatten-array/flatten_array.py)): Python stack discussion (iterative array flattening)
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [bank account](bank-account) ([_.py solution_](bank-account/bank_account.py)): concurrency, decorators and errors
+ - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [flatten array](flatten-array) ([_.py solution_](flatten-array/flatten_array.py)): Python stack discussion (iterative array flattening)
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [binary search tree](binary-search-tree) ([_.py solution_](binary-search-tree/binary_search_tree.py)): basically a simpler version of the array flattening problem (same techniques involved)
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py)): interesting algorithmic problem (if you have a simpler solution I'm interested)
