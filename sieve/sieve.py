@@ -1,0 +1,2 @@
+def sieve(limit):
+    pass

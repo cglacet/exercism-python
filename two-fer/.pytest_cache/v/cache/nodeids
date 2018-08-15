@@ -1,0 +1,5 @@
+[
+  "two_fer_test.py::TwoFerTest::test_a_name_given",
+  "two_fer_test.py::TwoFerTest::test_another_name_given",
+  "two_fer_test.py::TwoFerTest::test_no_name_given"
+]

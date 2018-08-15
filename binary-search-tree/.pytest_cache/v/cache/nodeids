@@ -1,0 +1,12 @@
+[
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_can_create_complex_tree",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_can_sort_complex_tree",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_can_sort_if_second_number_is_greater_than_first",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_can_sort_if_second_number_is_same_as_first",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_can_sort_if_second_number_is_smaller_than_first",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_can_sort_single_number",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_data_is_retained",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_greater_number_at_right_node",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_same_number_at_left_node",
+  "binary_search_tree_test.py::BinarySearchTreeTest::test_smaller_data_at_left_node"
+]

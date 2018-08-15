@@ -1,0 +1,12 @@
+[
+  "binary_search_test.py::BinarySearchTest::test_empty_array",
+  "binary_search_test.py::BinarySearchTest::test_finds_value_at_beginning_of_array",
+  "binary_search_test.py::BinarySearchTest::test_finds_value_at_end_of_array",
+  "binary_search_test.py::BinarySearchTest::test_finds_value_in_array_of_even_length",
+  "binary_search_test.py::BinarySearchTest::test_finds_value_in_array_of_odd_length",
+  "binary_search_test.py::BinarySearchTest::test_finds_value_in_array_with_one_element",
+  "binary_search_test.py::BinarySearchTest::test_finds_value_in_middle_of_array",
+  "binary_search_test.py::BinarySearchTest::test_identifies_value_missing",
+  "binary_search_test.py::BinarySearchTest::test_value_larger_than_arrays_maximum",
+  "binary_search_test.py::BinarySearchTest::test_value_smaller_than_arrays_minimum"
+]
