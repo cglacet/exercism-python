@@ -71,8 +71,8 @@ Color codes:
  first time in python ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) | _easy_ ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) | _not so easy_ ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) | medium ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) | hard ![#000000](https://placehold.it/10/000000/000000?text=+)
 
 Exercises from the main track are:
- - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [leap](leap) ([_.py solution_](leap/leap.py))
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [Bob](bob) ([_.py solution_](bob/bob.py))
+ - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [leap](leap) ([_.py solution_](leap/leap.py)) booleans and modulo
+ - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [Bob](bob) ([_.py solution_](bob/bob.py)) "switch-cases"
  - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [allergies](allergies) ([_.py solution_](allergies/allergies.py)) range and enumerate
  - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [sum of multiples](sum-of-multiples) ([_.py solution_](sum-of-multiples/sum_of_multiples.py)) range and sum
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [kindergarten garden](kindergarten-garden) ([_.py solution_](kindergarten-garden/kindergarten_garden.py)) zip and default dictionaries
