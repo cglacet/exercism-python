@@ -27,9 +27,9 @@ list of child nodes) a zipper might support these operations:
   `next` node if possible otherwise to the `prev` node if possible,
   otherwise to the parent node, returns a new zipper)
 
-## Solution
+## Implementation hints about my solution
 
-References I used to implement this (I tried to stick to name notations used there in
+References I used to implement [zipper.py](clean_zipper.py) (I tried to stick to name notations used there in
 these, but I'm new to this concept so things may have been mixed up):
 
 - [[1] Why do we even need such a data structure? A clear starting point](http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/).
@@ -228,6 +228,8 @@ contexts = [
 
 In order to retrieve `T` from `Z`, we only need to repeat Up operations until the root is
 reached (until contexts list is empty).
+
+Implementation can be found in (clean_zipper.py)[clean_zipper.py].
 
 ## Exception messages
 
