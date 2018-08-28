@@ -31,28 +31,27 @@ list of child nodes) a zipper might support these operations:
 
 References I used to implement this (I tried to stick to name notations used there in
 these, but I'm new to this concept so things may have been mixed up):
-    - [1] Why do we even need such a data structure? A clear starting point:
-        http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/
-    - [2] The "Zipper Binary Trees" part gives some interesting hints on implementation:
-        https://ferd.ca/yet-another-article-on-zippers.html
-    - [3] Even more details, this time with any arity trees:
-        https://www.youtube.com/watch?v=Xdc7NkgfIgQ
+
+- [[1] Why do we even need such a data structure? A clear starting point](http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/).
+- [[2] The "Zipper Binary Trees" part gives some interesting hints on implementation](https://ferd.ca/yet-another-article-on-zippers.html).
+- [[3] Even more details, this time with any arity trees](https://www.youtube.com/watch?v=Xdc7NkgfIgQ)
 
 One very important thing here is that we want a data structure that is immutable.
 Otherwise this whole thing would have no sense as in place insertion/deletion in
 trees work perfectly fine using only classic data structure.
 
-If you understand why we need such a data structure ([1] explains it very well, I think
-I couldn't add anything valuable to it), here is my (novice) definition of what a zipper
-(for binary tree) is and how why we will implement it this way.
+If you understand why we need such a data structure ([[1]](http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/)
+explains it very well, I think I couldn't add anything valuable to it), here is my
+(novice) definition of what a zipper (for binary tree) is and how why we will implement
+it this way.
 
-A zipper is a soft destruction of a given binary tree T. It's a destruction as the structure
-of the tree is not directly accessible from the zipper. It's a soft destruction as T can be
+A zipper is a soft destruction of a given binary tree `T`. It's a destruction as the structure
+of the tree is not directly accessible from the zipper. It's a soft destruction as `T` can be
 reconstructed efficiently from the zipper. The deconstruction represents a step-by-step map
-of a journey within the input tree T that is complete enough so no information is lost in the
+of a journey within the input tree `T` that is complete enough so no information is lost in the
 process.
 
-Consider the input graph T=a:
+Consider the input graph `T=a`:
 ```
               a
            /     \
@@ -68,15 +67,15 @@ or a Right-step, Up-step (choosing from the current node 2 children (L, R) or pa
 Lets represent a journey by the list of steps: J = (L, L, R, U, R) taken. This journey
 ends on node y.
 
-Lets see how this journey will deconstruct T in a zipper form Z and how we can retrieve
-T from Z. The zipper data structure will consist of a sub-tree (representing the part
-of the tree that can be explored without ever going Up), and a contexts list (containing
+Lets see how this journey will deconstruct `T` in a zipper form `Z` and how we can retrieve
+`T` from `Z`. The zipper data structure will consist of a `sub-tree` (representing the part
+of the tree that can be explored without ever going Up), and a `contexts` list (containing
 all necessary information required to explore the rest of the tree).
 
 Let's proceed by iterating on the journey's length.
   (0) First, if no step was taken, then the journey is empty J = (), which means that
   we can go anywhere in the tree from there without ever going Up. Therefore the
-  zipper Z is equal to:
+  zipper `Z` is equal to:
 ```
 sub-tree = T
 contexts = []
@@ -140,7 +139,7 @@ contexts = []
 ```
 
   Now we know where to attach the sub-tree rooted at b (ie., replace '.' by the tree sub-rooted at b).
-  Phew! To sum-up, zipper Z is now equal to:
+  Phew! To sum-up, zipper `Z` is now equal to:
 
 ```
 sub-tree =
@@ -161,7 +160,7 @@ contexts = [
   (2) Now that you got the idea, we can go faster. Remember that the final journey
   is J = (L, L, R, U, R). After 2 steps, the journey is J = (L, L). To compute the
   zipper, just mimic step (1) and deconstruct the sub-tree while saving the upward
-  part in the contexts list. The zipper Z will look like this:
+  part in the contexts list. The zipper `Z` will look like this:
 
 ```
 sub-tree =
@@ -172,8 +171,8 @@ contexts = [
           a
        /     \
      .         c        ,     b
-             /   \           /
-            f     g         e
+             /   \           / \
+            f     g         e   .
 ]
 ```
 
@@ -183,7 +182,7 @@ contexts = [
 sub-tree = y
 contexts = [
            a                                               Notice how the '.' is going deeper and deeper
-        /     \                                            because I aligned contexts on their original dept
+        /     \                                            because I aligned contexts on their original depth
       .         c        ,      b      ,                       <-- step 1
               /   \           /   \
              f     g         e     .          d                <-- step 2
@@ -196,9 +195,9 @@ contexts = [
 
   (4) Step 4 is a new kind of step, it's going Up, the journey is J = (L, L, R, U).
   Going up, simply means "reconstruct to previous step" or "cancel pleas!" also known
-  as "ctrl + z". In order to reconstruct from a zipper Z, we simply need to invert actions
+  as "ctrl + z". In order to reconstruct from a zipper `Z`, we simply need to invert actions
   we made when going down. Which means: (i) Extract the last context from the contexts list,
-  call it c, (ii) Define the new sub-tree to be sub-tree attached to c (on the right side).
+  call it `c`, (ii) Define the new sub-tree to be sub-tree attached to c (on the right side).
   We already demonstrate that this would indeed re-construct the graph (we designed it
   so this could work! Details in step (1)). The sub-tree operation (ii) is the following:
 
@@ -208,7 +207,7 @@ contexts = [
                                       x   .                  x   y
 ```
 
-  The zipper Z is:
+  The zipper `Z` is:
 
 ```
 sub-tree =
@@ -227,7 +226,7 @@ contexts = [
 
   (5) Is the exact same as step (3).
 
-In order to retrieve T from Z, we only need to repeat Up operations until the root is
+In order to retrieve `T` from `Z`, we only need to repeat Up operations until the root is
 reached (until contexts list is empty).
 
 ## Exception messages

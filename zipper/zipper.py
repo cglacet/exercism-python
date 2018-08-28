@@ -123,8 +123,8 @@ Let's proceed by iterating on the journey's length.
           a
        /     \
      .         c        ,     b
-             /   \           /
-            f     g         e
+             /   \           / \
+            f     g         e   .
     ]
 
   (3) After 3 steps, the journey is J = (L, L, R) and the zipper is:
