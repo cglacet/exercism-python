@@ -45,7 +45,7 @@ explains it very well, I think I couldn't add anything valuable to it), here is 
 (novice) definition of what a zipper (for binary tree) is and how why we will implement
 it this way.
 
-A zipper is a soft destruction of a given binary tree `T`. It's a destruction as the structure
+A (binary-tree)-zipper is a soft destruction of a given binary tree `T`. It's a destruction as the structure
 of the tree is not directly accessible from the zipper. It's a soft destruction as `T` can be
 reconstructed efficiently from the zipper. The deconstruction represents a step-by-step map
 of a journey within the input tree `T` that is complete enough so no information is lost in the
