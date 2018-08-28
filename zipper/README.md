@@ -77,8 +77,10 @@ Let's proceed by iterating on the journey's length.
   (0) First, if no step was taken, then the journey is empty J = (), which means that
   we can go anywhere in the tree from there without ever going Up. Therefore the
   zipper Z is equal to:
-        - sub-tree = T
-        - contexts = []
+```
+sub-tree = T
+contexts = []
+```
   (1) We now have stepped in the tree, our first programmed step was L. Our journey is
   J = (L). This lead us to node b, from there, without going Up, we can only go to this
   sub-tree:
@@ -140,20 +142,20 @@ Let's proceed by iterating on the journey's length.
   Now we know where to attach the sub-tree rooted at b (ie., replace '.' by the tree sub-rooted at b).
   Phew! To sum-up, zipper Z is now equal to:
 
- ```
-    sub-tree =
+```
+sub-tree =
                 b
               /   \
              d     e
             / \
            x   y
-    contexts = [
+contexts = [
               a
            /     \
          .         c
                  /   \
                 f     g
-    ]
+]
 ```
 
   (2) Now that you got the idea, we can go faster. Remember that the final journey
@@ -162,24 +164,24 @@ Let's proceed by iterating on the journey's length.
   part in the contexts list. The zipper Z will look like this:
 
 ```
-    sub-tree =
+sub-tree =
             d
            / \
           x   y
-    contexts = [
+contexts = [
           a
        /     \
      .         c        ,     b
              /   \           /
             f     g         e
-    ]
+]
 ```
 
   (3) After 3 steps, the journey is J = (L, L, R) and the zipper is:
 
 ```
-     sub-tree = y
-     contexts = [
+sub-tree = y
+contexts = [
            a                                               Notice how the '.' is going deeper and deeper
         /     \                                            because I aligned contexts on their original dept
       .         c        ,      b      ,                       <-- step 1
@@ -187,7 +189,7 @@ Let's proceed by iterating on the journey's length.
              f     g         e     .          d                <-- step 2
                                              / \
                                             x   .              <-- step 3
-     ]                                                     (we are not allowed to use that information, I just
+]                                                          (we are not allowed to use that information, I just
                                                             added this so you can see the evolution of the position
                                                             during the journey)
 ```
@@ -209,11 +211,11 @@ Let's proceed by iterating on the journey's length.
   The zipper Z is:
 
 ```
-    sub-tree =
+sub-tree =
             d
            / \
           x   y
-    contexts = [
+contexts = [
           a
        /     \
      .         c        ,     b
