@@ -1,0 +1,17 @@
+[
+  "pov_test.py::PovTest::test_can_find_path_from_nodes_other_than_x",
+  "pov_test.py::PovTest::test_can_find_path_not_involving_root",
+  "pov_test.py::PovTest::test_can_find_path_to_cousin",
+  "pov_test.py::PovTest::test_can_find_path_to_sibling",
+  "pov_test.py::PovTest::test_can_reroot_a_tree_with_new_root_deeply_nested",
+  "pov_test.py::PovTest::test_can_reroot_complex_tree_with_cousins",
+  "pov_test.py::PovTest::test_can_reroot_tree_with_parent_and_many_siblings",
+  "pov_test.py::PovTest::test_can_reroot_tree_with_parent_and_one_sibling",
+  "pov_test.py::PovTest::test_errors_if_destination_does_not_exist",
+  "pov_test.py::PovTest::test_errors_if_source_does_not_exist",
+  "pov_test.py::PovTest::test_errors_if_target_does_not_exist_in_large_tree",
+  "pov_test.py::PovTest::test_errors_if_target_does_not_exist_in_singleton_tree",
+  "pov_test.py::PovTest::test_find_path_between_two_nodes",
+  "pov_test.py::PovTest::test_moves_children_of_new_root_to_same_level_as_former_parent",
+  "pov_test.py::PovTest::test_singleton_returns_same_tree"
+]
