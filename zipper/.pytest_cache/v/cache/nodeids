@@ -1,0 +1,10 @@
+[
+  "zipper_test.py::ZipperTest::test_data_is_retained",
+  "zipper_test.py::ZipperTest::test_dead_end",
+  "zipper_test.py::ZipperTest::test_different_paths_to_same_zipper",
+  "zipper_test.py::ZipperTest::test_left_and_right_value",
+  "zipper_test.py::ZipperTest::test_set_left_with_value",
+  "zipper_test.py::ZipperTest::test_set_right_to_none",
+  "zipper_test.py::ZipperTest::test_set_value",
+  "zipper_test.py::ZipperTest::test_tree_from_deep_focus"
+]
