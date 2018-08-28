@@ -83,9 +83,13 @@ Exercises from the main track are:
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [book store](book-store) ([_.py solution_](book-store/book_store.py)) algorithmic problem (a little bit challenging. Try to achieve _O(n)_)
  - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [24h clock](clock) ([_.py solution_](clock/clock.py)) Euclidian division (and modulo)
  - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [two fer](two-fer) ([_.py solution_](two-fer/two_fer.py)) Not too sure why this exercise is here TBH.
+ - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [markdown](markdown) ([_.py solution_](markdown/markdown.py)) code review and regex.
+ - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rest API](rest-api) ([_.py solution_](rest-api/rest_api.py)) I'm not too sure what this is about, you can have a look at my solution and tell me what you think.
 
 Extra exercises that I think are interesting:
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [bank account](bank-account) ([_.py solution_](bank-account/bank_account.py)): concurrency, decorators and errors
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [flatten array](flatten-array) ([_.py solution_](flatten-array/flatten_array.py)): Python stack discussion (iterative array flattening)
  - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [binary search tree](binary-search-tree) ([_.py solution_](binary-search-tree/binary_search_tree.py)): basically a simpler version of the array flattening problem (same techniques involved)
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py)): interesting algorithmic problem (if you have a simpler solution I'm interested)
+ - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [POV](pov) ([_.py solution_](pov/pov.py)): Rotating a tree around a given node (POV is a warming up exercise for [zipper](zipper)).
+ - ![#000000](https://placehold.it/10/000000/000000?text=+) [zipper](zipper) ([_.py solution_](zipper/zipper.py)): A programming concept I had never heard of, this is interesting to understand (tackle immutability and performances)
