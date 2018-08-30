@@ -67,7 +67,7 @@ z = Zipper().insert("a").right().insert("c").up().left().insert("b").left().inse
 z_2 = z.insert("2")
 z_3 = z.insert("3")
 # We want immutability, in other words:
-assert(z.up().value() == "b")
+assert(z.up().value() == "d")
 assert(z_2.value() != z_3.value())
 ```
 
