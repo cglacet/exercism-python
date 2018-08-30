@@ -37,7 +37,11 @@ class ZipperTest(unittest.TestCase):
     def test_dead_end(self):
         t1, _, _, _ = self.create_trees()
         zipper = Zipper.from_tree(t1)
-        self.assertIsNone(zipper.left().left())
+        # I think this shouldn't be None as one might want to insert a node here!
+        # self.assertIsNone(zipper.left().left())
+        # I think the following makes more sense:
+        with self.assertRaises(AttributeError):
+            zipper.left().left().left()
 
     def test_tree_from_deep_focus(self):
         t1, _, _, _ = self.create_trees()
@@ -71,6 +75,29 @@ class ZipperTest(unittest.TestCase):
         self.assertEqual(zipper.left().up().right().to_tree(),
                          zipper.right().to_tree())
 
+    def test_immutability_move_insert(self):
+        z = Zipper().insert(1).right().insert(4).up().left().insert(2).left().insert(3).left()
+        z_2 = z.insert(5)
+        z_3 = z.insert(7)
+        self.assertIs((z.focus is None), True)
+        self.assertEqual(z.up().value(), 3)
+        self.assertNotEqual(z_2.value(), z_3.value())
+
+    def  test_immutability_change_whole_tree(self):
+        z = Zipper().insert(1).right().insert(4).up().left().insert(2).left().insert(3).up().up()
+        z_2 = Zipper().insert(1).right().insert(4).up().left().insert(2).left().insert(3).up().up()
+        z.set_value(2).right().set_value(8).up().left().set_value(4).left().set_value(6).up().up()
+        self.assertEqual(z.value(), z_2.value())
+        self.assertEqual(z.right().value(), z_2.right().value())
+        self.assertEqual(z.right().up().left().value(), z_2.right().up().left().value())
+        self.assertEqual(z.right().up().left().left().value(), z_2.right().up().left().left().value())
+        self.assertEqual(z.right().up().left().up().value(), z_2.right().up().left().up().value())
+
+    def test_immutability_set_value(self):
+        z = Zipper().insert(1).right().insert(4).up().left().insert(2).left().insert(3)
+        z_2 = z.set_value(5)
+        self.assertEqual(z.value(), 3)
+        self.assertEqual(z_2.value(), 5)
 
 if __name__ == '__main__':
     unittest.main()

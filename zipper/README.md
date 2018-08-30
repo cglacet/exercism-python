@@ -29,27 +29,55 @@ list of child nodes) a zipper might support these operations:
 
 ## Implementation hints about my solution
 
-References I used to implement [zipper.py](clean_zipper.py) (I tried to stick to name notations used there in
-these, but I'm new to this concept so things may have been mixed up):
+References I used to implement [zipper.py](clean_zipper.py) (I tried to stick to name notations used in
+these refs., but I'm new to this concept so things might have mixed some things up):
 
 - [[1] Why do we even need such a data structure? A clear starting point](http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/).
 - [[2] The "Zipper Binary Trees" part gives some interesting hints on implementation](https://ferd.ca/yet-another-article-on-zippers.html).
 - [[3] Even more details, this time with any arity trees](https://www.youtube.com/watch?v=Xdc7NkgfIgQ)
 
 One very important thing here is that we want a data structure that is immutable.
-Otherwise this whole thing would have no sense as in place insertion/deletion in
-trees work perfectly fine using only classic data structure.
+Otherwise this whole thing would have no sense as in-place insertions/deletions are
+not a real challenge.
 
-If you understand why we need such a data structure ([[1]](http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/)
-explains it very well, I think I couldn't add anything valuable to it), here is my
-(novice) definition of what a zipper (for binary tree) is and how why we will implement
-it this way.
+If you don't understand why we need such a data structure you should be reading
+[[1]](http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/), it explains
+it very well and I think I couldn't add anything valuable to it. On the other hand
+I'll explain why (binary tree) zippers are indeed a good solution to the problem by going over
+a detailed definition.
 
-A (binary-tree)-zipper is a soft destruction of a given binary tree `T`. It's a destruction as the structure
-of the tree is not directly accessible from the zipper. It's a soft destruction as `T` can be
-reconstructed efficiently from the zipper. The deconstruction represents a step-by-step map
-of a journey within the input tree `T` that is complete enough so no information is lost in the
-process.
+Imagine you have an object (a list, a tree, a maze, ...) and a cursor that allows
+to retrieve a position in this object.
+A zipper simply is __a way of storing__ an (object, cursor) pair so that navigation and
+modification of the object are done in a very efficient way (in regards of the
+time complexity).   
+
+The main operations a zipper have are the cursor movements, in a binary tree, they are: left, right and up.
+Other important operations a zipper must have are insertion and deletion of nodes.
+A good zipper is supposed to do all these operation in constant time.
+
+Once again, this may look extremely simple in the mutable case, but if we want an
+immutable data structure, things get a bit more complex, if you're not convinced yet
+that mean you didn't read enough times [[1]](http://blog.ezyang.com/2010/04/you-could-have-invented-zippers/) :p.
+
+Here is something we want to be able to do with out binary tree zippers:
+
+```python
+z = Zipper().insert("a").right().insert("c").up().left().insert("b").left().insert("d").left()
+z_2 = z.insert("2")
+z_3 = z.insert("3")
+# We want immutability, in other words:
+assert(z.up().value() == "b")
+assert(z_2.value() != z_3.value())
+```
+
+A (binary-tree)-zipper is typically stored as a soft destruction a classical binary tree.
+It's a destruction as the structure of the tree is not directly accessible from the zipper.
+It's a soft destruction as T can be reconstructed from the zipper.
+
+The deconstruction represents a step-by-step map of a journey within a tree `T` (the discrete math object)
+that is complete enough so no information is lost in the process.
+The journey represents the successive positions of the cursor in the tree `T`.
 
 Consider the input graph `T=a`:
 ```
@@ -63,14 +91,14 @@ Consider the input graph `T=a`:
 ```
 
 A journey always starts from the root (a) and simply is a list of steps, either a Left-step
-or a Right-step, Up-step (choosing from the current node 2 children (L, R) or parent (U)).
+or a Right-step, Up-step (choosing from the current node's children (L, R) or parent (U)).
 Lets represent a journey by the list of steps: J = (L, L, R, U, R) taken. This journey
 ends on node y.
 
-Lets see how this journey will deconstruct `T` in a zipper form `Z` and how we can retrieve
+Lets see how this journey will deconstruct `T` within a zipper `Z` and how we can retrieve
 `T` from `Z`. The zipper data structure will consist of a `sub-tree` (representing the part
 of the tree that can be explored without ever going Up), and a `contexts` list (containing
-all necessary information required to explore the rest of the tree).
+all necessary information required to explore the rest of the tree, the upside part).
 
 Let's proceed by iterating on the journey's length.
   (0) First, if no step was taken, then the journey is empty J = (), which means that
