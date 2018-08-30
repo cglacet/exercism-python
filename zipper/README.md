@@ -53,7 +53,7 @@ modification of the object are done in a very efficient way (in regards of the
 time complexity).   
 
 The main operations a zipper have are the cursor movements, in a binary tree, they are: left, right and up.
-Other important operations a zipper must have are insertion and deletion of nodes.
+Other important operations a zipper must have are modification, insertion and deletion of nodes.
 A good zipper is supposed to do all these operation in constant time.
 
 Once again, this may look extremely simple in the mutable case, but if we want an
@@ -63,12 +63,10 @@ that mean you didn't read enough times [[1]](http://blog.ezyang.com/2010/04/you-
 Here is something we want to be able to do with out binary tree zippers:
 
 ```python
-z = Zipper().insert("a").right().insert("c").up().left().insert("b").left().insert("d").left()
-z_2 = z.insert("2")
-z_3 = z.insert("3")
+z = Zipper().insert("a").right().insert("c").up().left().insert("b").left().insert("d")
+z_2 = z.set_value("not d").left().insert("2")
 # We want immutability, in other words:
 assert(z.up().value() == "d")
-assert(z_2.value() != z_3.value())
 ```
 
 A (binary-tree)-zipper is typically stored as a soft destruction a classical binary tree.
