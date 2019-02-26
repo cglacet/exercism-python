@@ -2,6 +2,8 @@
 
 Creating a zipper for a binary tree.
 
+## Description from Exercism.io
+
 [Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
 a purely functional way of navigating within a data structure and
 manipulating it.  They essentially contain a data structure and a
