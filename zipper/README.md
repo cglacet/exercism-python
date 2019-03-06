@@ -2,6 +2,8 @@
 
 Creating a zipper for a binary tree.
 
+## Description from Exercism.io
+
 [Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
 a purely functional way of navigating within a data structure and
 manipulating it.  They essentially contain a data structure and a
@@ -27,7 +29,7 @@ list of child nodes) a zipper might support these operations:
   `next` node if possible otherwise to the `prev` node if possible,
   otherwise to the parent node, returns a new zipper)
 
-## Implementation hints about my solution
+## How/Why to implement Zippers
 
 References I used to implement [zipper.py](clean_zipper.py) (I tried to stick to name notations used in
 these refs., but I'm new to this concept so things might have mixed some things up):
