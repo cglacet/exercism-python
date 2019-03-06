@@ -44,13 +44,23 @@ def group_books(books: List[Book]) -> List[List[Book]]:      # O(|B|n log n)
         book_groups.sort(key=group_rank)
         for i in range(nb_copies):
             book_groups[i].append(book)
-        #print([len(g) for g in book_groups])
     return book_groups
 
 
-# Premilinary computations to determine what group size are the most favorable
-# for the customers. This is done by determining which group sizes offer the best
-# reduction compared to the next one.
+# Preliminary computations to determine what group sizes are the most favorable
+# for the customers. This is done by determining which group sizes would offer the best
+# reduction when adding one more book.
+
+_group_rank = None
+def group_rank(book_group: List[Book]) -> int:
+    """Returns the rank of a group, the lower the group rank is, the more favorable
+    for the customer it is to add a book in this group."""
+    global _group_rank
+    if _group_rank is None:
+        _group_rank = compute_group_size_ranks(DISCOUNTS)
+    return _group_rank[len(book_group)]
+
+
 def compute_group_size_ranks(discounts: List[float]) -> List[int]:
     """Returns book groups size rankings, the lower the value, the most favorable
     it is for the customer to add a book in a group of the given size."""
@@ -68,16 +78,6 @@ def compute_group_size_ranks(discounts: List[float]) -> List[int]:
     best_group_sizes = sorted(range(len(next_offer_increase)), key=lambda i: next_offer_increase[i], reverse=True)
     group_size_ranks = invert_list_indexes(best_group_sizes)
     return group_size_ranks
-
-
-_group_rank = None
-def group_rank(book_group: List[Book]) -> int:
-    """Returns the rank of a group, the lower the group rank is, the more favorable
-    for the customer it is to add a book in this group."""
-    global _group_rank
-    if _group_rank is None:
-        _group_rank = compute_group_size_ranks(DISCOUNTS)
-    return _group_rank[len(book_group)]
 
 
 if __name__ == "__main__":
