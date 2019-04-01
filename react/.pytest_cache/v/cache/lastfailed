@@ -1,4 +1,0 @@
-{
-  "react_test.py::ReactTest::test_callbacks_not_called_so_long_as_output_not_changed": true,
-  "react_test.py::test_callbacks_not_called_so_long_as_output_not_changed": true
-}
