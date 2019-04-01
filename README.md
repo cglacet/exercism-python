@@ -96,4 +96,4 @@ Extra exercises that I think are interesting:
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py)): interesting algorithmic problem (if you have a simpler solution I'm interested)
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [POV](pov) ([_.py solution_](pov/pov.py)): Rotating a tree around a given node (POV is a warming up exercise for [zipper](zipper)).
  - ![#000000](https://placehold.it/10/000000/000000?text=+) [zipper](zipper) ([_.py solution_](zipper/clean_zipper.py)): A programming concept I had never heard of, this is interesting to understand (tackle immutability and performances)
- - ![#000000](https://placehold.it/10/E8C14E/000000?text=+) [zipper](nth-prime) ([_.py solution_](nth-prime/nth_prime.py)): Memoization and algorithmic optimization
+ - ![#000000](https://placehold.it/10/E8C14E/000000?text=+) [nth prime](nth-prime) ([_.py solution_](nth-prime/nth_prime.py)): Memoization and algorithmic optimization
