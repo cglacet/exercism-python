@@ -6,7 +6,7 @@ the cell's value is greater than or equal to every element in its row and
 less than or equal to every element in its column:
 
         M[i,j] >= M[c,j] | c any column index of M
-    and M[i,j] >= M[i,r] | r any row index of M
+    and M[i,j] <= M[i,r] | r any row index of M
 
 For example, with an input matrix M, the only Saddle point is on cell M[1, 0] = "5":
   [ 9 8 7 ]

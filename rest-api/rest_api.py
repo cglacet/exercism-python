@@ -105,6 +105,7 @@ if __name__ == "__main__":
     import json
     db = {'users': []}
     api = RestAPI(db)
+    print(isinstance(api, RestAPI))
     for name in 'Alice', 'Bob', 'Chris':
         new_user = json.loads(api.post('/add', json.dumps({'user': name})))
         db['users'].append(new_user)

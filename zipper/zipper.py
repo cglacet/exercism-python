@@ -79,14 +79,21 @@ class Zipper:
         location.focus.value = value
         return location
 
-    def insert(self, value):
-        return Zipper(BinaryTree(value, None, None), self.context)
+    def insert(self, obj):
+        tree = None
+        if isinstance(obj, Zipper):
+            tree = obj.tree
+        elif isinstance(obj, BinaryTree):
+            tree = obj
+        else:
+            tree = BinaryTree(obj, None, None)
+        return Zipper(tree, self.context)
 
     def left(self):
         new_focus, new_context = self.focus.focus_left()
         # # Uncomment to pass the original `test_dead_end`:
         # if not new_focus:
-            # return None
+        #     return None
         return Zipper(new_focus, self.context+[new_context])
 
     def set_left(self, left_tree_dict):
@@ -111,12 +118,34 @@ class Zipper:
         previous_focus = last_context.reattach(self.focus)
         return Zipper(previous_focus, self.context[:-1])
 
-    def to_tree(self):
+    def root(self):
         zipper = Zipper(self.focus, self.context)
         while zipper.context:
             zipper = zipper.up()
-        return BinaryTree.to_dict(zipper.focus)
+        return zipper
+
+    @property
+    def tree(self):
+        return self.root().focus
+
+    def to_tree(self):
+        return BinaryTree.to_dict(self.tree)
 
     def __repr__(self):
         context_str = '('+'), ('.join(map(str, self.context))+')'
         return f"focus:\n{self.focus}\ncontext:[\n{context_str}\n]"
+
+
+if __name__ == "__main__":
+    z = Zipper().insert(1).right().insert(4).up().left().insert(2).left().insert(3).left()
+    z_a = Zipper().insert(1).right().insert(4).up().left()
+
+    # Zipper insertion
+    z_b = Zipper().insert(2).left().insert(3).left()
+    z_prime = z_a.insert(z_b)
+    print(str(z_prime.tree) == str(z.tree))
+
+    # Tree insertion
+    t_b = BinaryTree(2, BinaryTree(3, None, None), None)
+    z_prime = z_a.insert(t_b)
+    print(str(z_prime.tree) == str(z.tree))

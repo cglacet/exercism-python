@@ -16,15 +16,17 @@ def length(xs):
         count += 1
     return count
 
+
 def map_clone(function, xs):
     return [function(e) for e in xs]
 
 
 def foldl(function, xs, acc):
+    print(acc)
     result = acc
     for value in xs:
-        result = function(result, value)
-    return result
+        acc = function(acc, value)
+    return acc
 
 
 def foldr(function, xs, acc):
@@ -40,6 +42,11 @@ def iterate_reverse(xs):
     while True:
         try:
             yield xs[i]
+            i -= 1
         except IndexError:
-            break
-        i -= 1
+            return
+
+a = [1,2,3,4]
+other = [0]
+print(foldl(lambda acc, v: acc+a, a, other))
+print(other)

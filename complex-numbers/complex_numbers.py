@@ -1,5 +1,5 @@
 import math
-import cmath
+
 
 class ComplexNumber(object):
     def __init__(self, real, imaginary, precision=10**-10):
@@ -43,14 +43,9 @@ class ComplexNumber(object):
         return math.sqrt(self.r**2 + self.i**2)
 
     def conjugate(self):
-        return ComplexNumber(self.r,  -self.i)
+        return ComplexNumber(self.r, -self.i)
 
     def exp(self):
         c1 = ComplexNumber(math.exp(self.r), 0)
         c2 = ComplexNumber(math.cos(self.i), math.sin(self.i))
         return c1*c2
-
-if __name__ == "__main__":
-    c = ComplexNumber(math.log(2), math.pi)
-    expected = ComplexNumber(-2, 0)
-    print(c.exp() == expected)

@@ -1,1 +1,4 @@
-{}
+{
+  "zipper_test.py::ZipperTest": true,
+  "zipper_test.py::ZipperTest::test_immutability_move": true
+}

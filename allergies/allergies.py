@@ -1,23 +1,39 @@
-class Allergies(object):
-    allergens = [
-        'eggs',
-        'peanuts',
-        'shellfish',
-        'strawberries',
-        'tomatoes',
-        'chocolate',
-        'pollen',
-        'cats'
-    ]
+""" Let `n` be the number of allergens and k (<= n) be the number of allergies.
+
+I created this version to demonstrate how O(k) time complexity can be achieved
+for all methods.
+"""
+import math
+
+
+class Allergies:
+    """Defines a sublist of allergies from a predefined list of `allergens`."""
+
+    allergens = ['eggs', 'peanuts', 'shellfish', 'strawberries',
+                 'tomatoes', 'chocolate', 'pollen', 'cats']
+
     nb_allergens = len(allergens)
-    allergen_index = { allergen:i for (i, allergen) in enumerate(allergens)  }
+    allergen_index = {allergen: i for (i, allergen) in enumerate(allergens)}
 
-    def __init__(self, score):
-        self.mask =  [ (score & 2**i > 0) for i in range(Allergies.nb_allergens) ]
+    def __init__(self, score):  # O(k)
+        self.allergies = list(self._allergens_in_score(score))
+        self.score = score
 
-    def is_allergic_to(self, item):
-        return self.mask[Allergies.allergen_index[item]]
+    @staticmethod
+    def _allergens_in_score(score):  # O(k)
+        while score >= 1:
+            item_score = math.floor(math.log(score, 2))
+            score -= 2**item_score
+            try:
+                yield Allergies.allergens[item_score]
+            except IndexError:
+                pass
+
+    def is_allergic_to(self, item):  # O(1)
+        """Returns true if `item` is in the allergies list."""
+        return (self.score & 2**Allergies.allergen_index[item]) > 0
 
     @property
-    def lst(self):
-        return [ allergen for (i, allergen) in enumerate(Allergies.allergens) if self.mask[i] ]
+    def lst(self):  # O(k)
+        """Returns the list of allergies."""
+        return self.allergies

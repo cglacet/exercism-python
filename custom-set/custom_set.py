@@ -1,10 +1,6 @@
-"""This is an exercise from https://exercism.io/my/tracks/python."""
-from typing import List
-
-class CustomSet:
-    def __init__(self, elements: List[object] = None, nb_buckets: int = 10**3) -> None:
-        elements = elements or []
-        self.buckets = [[]]*nb_buckets
+class CustomSet(object):
+    def __init__(self, elements=[]):
+        pass
 
     def isempty(self):
         pass

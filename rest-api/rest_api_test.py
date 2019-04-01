@@ -12,7 +12,7 @@ class RestAPITest(unittest.TestCase):
         api = RestAPI(database)
         response = api.get('/users')
         self.assertDictEqual(json.loads(response), database)
-
+    
     def test_add_user(self):
         database = {"users": []}
         api = RestAPI(database)
