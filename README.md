@@ -5,7 +5,7 @@ My answers for the exercism.io python track. You can find my profile over here [
 "](https://github.com/cglacet/Blog/tree/master/python#are-we-doing-it-wrong). There are some overlaps with the content you can find here and it's still under construction, but I'll go in much more details on every subject I'll talk about.
 
 ## You should try Exercism.io
-[Exercism.io](https://exercism.io) is an online learning platform with __feedback__. The feedback comes from experimented _mentors_ in the specific language that you choose. The main drawback when learning online is the lack of feedback, you can develop bad habits without even having a chance to be notified about it. I think exercism.io is a good idea to try solving that missing bit in online learning.  
+[Exercism.io](https://exercism.io) is an online learning platform with __feedback__. The feedback comes from experimented _mentors_ in the specific language that you choose. The main drawback when learning online is the lack of feedback, you can develop bad habits without even having a chance to be notified about it. I think exercism.io is a good idea to try solving that missing bit in online learning.
 
 The process is simple:
 __(i)__ you pick and download an exercise (_eg._, [kindergarten-garden](kindergarten-garden)),
@@ -96,3 +96,4 @@ Extra exercises that I think are interesting:
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py)): interesting algorithmic problem (if you have a simpler solution I'm interested)
  - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [POV](pov) ([_.py solution_](pov/pov.py)): Rotating a tree around a given node (POV is a warming up exercise for [zipper](zipper)).
  - ![#000000](https://placehold.it/10/000000/000000?text=+) [zipper](zipper) ([_.py solution_](zipper/clean_zipper.py)): A programming concept I had never heard of, this is interesting to understand (tackle immutability and performances)
+ - ![#000000](https://placehold.it/10/E8C14E/000000?text=+) [zipper](nth-prime) ([_.py solution_](nth-prime/nth_prime.py)): Memoization and algorithmic optimization
