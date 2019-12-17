@@ -2,7 +2,7 @@
 My answers for the exercism.io python track. You can find my profile over here [exercism.io/cglacet](https://exercism.io/profiles/cglacet)
 
 **2019 update** I'm sadly not back yet on Exercism.io, but I'm currently writting a few words about python here: ["One step closer to using Python properly
-"](https://github.com/cglacet/Blog/tree/master/python#are-we-doing-it-wrong). There are some overlaps with the content you can find here and it's still under construction, but I'll go in much more details on every subject I'll talk about.
+"](https://github.com/cglacet/Blog/tree/master/python#one-step-closer-to-using-python-properly). There are some overlaps with the content you can find here and it's still under construction, but I'll go in much more details on every subject I'll talk about.
 
 ## You should try Exercism.io
 [Exercism.io](https://exercism.io) is an online learning platform with __feedback__. The feedback comes from experimented _mentors_ in the specific language that you choose. The main drawback when learning online is the lack of feedback, you can develop bad habits without even having a chance to be notified about it. I think exercism.io is a good idea to try solving that missing bit in online learning.
