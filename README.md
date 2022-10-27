@@ -77,29 +77,29 @@ Exercise for which there are explanations have their names in **bold**, (for exa
 
 
 **Color codes**
-first time in python ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) | _easy_ ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) | _not so easy_ ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) | medium ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) | hard ![#000000](https://placehold.it/10/000000/000000?text=+)
+first time in python ![#56BDFF](https://via.placeholder.com/10/56BDFF/000000?text=+) | _easy_ ![#ABFF89](https://via.placeholder.com/10/ABFF89/000000?text=+) | _not so easy_ ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) | medium ![#FF7C63](https://via.placeholder.com/10/FF7C63/000000?text=+) | hard ![#000000](https://via.placeholder.com/10/000000/000000?text=+)
 
 Exercises from the main track are:
- - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [leap](leap) ([_.py solution_](leap/leap.py)) booleans and modulo
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [Bob](bob) ([_.py solution_](bob/bob.py)) "switch-cases"
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [allergies](allergies) ([_.py solution_](allergies/allergies.py)) range and enumerate
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [sum of multiples](sum-of-multiples) ([_.py solution_](sum-of-multiples/sum_of_multiples.py)) range and sum
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [kindergarten garden](kindergarten-garden) ([_.py solution_](kindergarten-garden/kindergarten_garden.py)) zip and default dictionaries
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [grade school](grade-school) ([_.py solution_](grade-school/grade_school.py)) lazzy evealuation and sorting
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [**saddle points**](saddle-points#saddle-points) ([_.py solution_](saddle-points/saddle_points.py)) object oriented programming and generators
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [binary search](binary-search) ([_.py solution_](binary-search/binary_search.py)) algorithmic problem
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [list operators](list-ops) ([_.py solution_](list-ops/list_ops.py))"Easier to ask for forgiveness than permission" (EFAP)
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [**book store**](book-store#book-store) ([_.py solution_](book-store/book_store.py)) algorithmic problem (a little bit challenging. Try to achieve _O(n)_)
- - ![#ABFF89](https://placehold.it/10/ABFF89/000000?text=+) [24h clock](clock) ([_.py solution_](clock/clock.py)) Euclidian division (and modulo)
- - ![#56BDFF](https://placehold.it/10/56BDFF/000000?text=+) [two fer](two-fer) ([_.py solution_](two-fer/two_fer.py)) Not too sure why this exercise is here TBH.
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [markdown](markdown) ([_.py solution_](markdown/markdown.py)) code review and regex.
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rest API](rest-api) ([_.py solution_](rest-api/rest_api.py)) I'm not too sure what this is about, you can have a look at my solution and tell me what you think.
+ - ![#56BDFF](https://via.placeholder.com/10/56BDFF/000000?text=+) [leap](leap) ([_.py solution_](leap/leap.py)) booleans and modulo
+ - ![#ABFF89](https://via.placeholder.com/10/ABFF89/000000?text=+) [Bob](bob) ([_.py solution_](bob/bob.py)) "switch-cases"
+ - ![#ABFF89](https://via.placeholder.com/10/ABFF89/000000?text=+) [allergies](allergies) ([_.py solution_](allergies/allergies.py)) range and enumerate
+ - ![#ABFF89](https://via.placeholder.com/10/ABFF89/000000?text=+) [sum of multiples](sum-of-multiples) ([_.py solution_](sum-of-multiples/sum_of_multiples.py)) range and sum
+ - ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) [kindergarten garden](kindergarten-garden) ([_.py solution_](kindergarten-garden/kindergarten_garden.py)) zip and default dictionaries
+ - ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) [grade school](grade-school) ([_.py solution_](grade-school/grade_school.py)) lazzy evealuation and sorting
+ - ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) [**saddle points**](saddle-points#saddle-points) ([_.py solution_](saddle-points/saddle_points.py)) object oriented programming and generators
+ - ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) [binary search](binary-search) ([_.py solution_](binary-search/binary_search.py)) algorithmic problem
+ - ![#ABFF89](https://via.placeholder.com/10/ABFF89/000000?text=+) [list operators](list-ops) ([_.py solution_](list-ops/list_ops.py))"Easier to ask for forgiveness than permission" (EFAP)
+ - ![#FF7C63](https://via.placeholder.com/10/FF7C63/000000?text=+) [**book store**](book-store#book-store) ([_.py solution_](book-store/book_store.py)) algorithmic problem (a little bit challenging. Try to achieve _O(n)_)
+ - ![#ABFF89](https://via.placeholder.com/10/ABFF89/000000?text=+) [24h clock](clock) ([_.py solution_](clock/clock.py)) Euclidian division (and modulo)
+ - ![#56BDFF](https://via.placeholder.com/10/56BDFF/000000?text=+) [two fer](two-fer) ([_.py solution_](two-fer/two_fer.py)) Not too sure why this exercise is here TBH.
+ - ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) [markdown](markdown) ([_.py solution_](markdown/markdown.py)) code review and regex.
+ - ![#FF7C63](https://via.placeholder.com/10/FF7C63/000000?text=+) [rest API](rest-api) ([_.py solution_](rest-api/rest_api.py)) I'm not too sure what this is about, you can have a look at my solution and tell me what you think.
 
 Extra exercises that I think are interesting:
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [bank account](bank-account) ([_.py solution_](bank-account/bank_account.py)): concurrency, decorators and errors
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [**flatten array**](flatten-array#flatten-array) ([_.py solution_](flatten-array/flatten_array.py)): Python stack discussion (iterative array flattening)
- - ![#E8C14E](https://placehold.it/10/E8C14E/000000?text=+) [binary search tree](binary-search-tree) ([_.py solution_](binary-search-tree/binary_search_tree.py)): basically a simpler version of the array flattening problem (same techniques involved)
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py)): interesting algorithmic problem (if you have a simpler solution I'm interested)
- - ![#FF7C63](https://placehold.it/10/FF7C63/000000?text=+) [POV](pov) ([_.py solution_](pov/pov.py)): Rotating a tree around a given node (POV is a warming up exercise for [zipper](zipper)).
- - ![#000000](https://placehold.it/10/000000/000000?text=+) [**zipper**](zipper#zipper) ([_.py solution_](zipper/clean_zipper.py)): A programming concept I had never heard of, this is interesting to understand (tackle immutability and performances)
- - ![#000000](https://placehold.it/10/E8C14E/000000?text=+) [**nth prime**](nth-prime#computing-the-nth-prime) ([_.py solution_](nth-prime/nth_prime.py)): Memoization and algorithmic optimization
+ - ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) [bank account](bank-account) ([_.py solution_](bank-account/bank_account.py)): concurrency, decorators and errors
+ - ![#FF7C63](https://via.placeholder.com/10/FF7C63/000000?text=+) [**flatten array**](flatten-array#flatten-array) ([_.py solution_](flatten-array/flatten_array.py)): Python stack discussion (iterative array flattening)
+ - ![#E8C14E](https://via.placeholder.com/10/E8C14E/000000?text=+) [binary search tree](binary-search-tree) ([_.py solution_](binary-search-tree/binary_search_tree.py)): basically a simpler version of the array flattening problem (same techniques involved)
+ - ![#FF7C63](https://via.placeholder.com/10/FF7C63/000000?text=+) [rectangles](rectangles) ([_.py solution_](rectangles/rectangles.py)): interesting algorithmic problem (if you have a simpler solution I'm interested)
+ - ![#FF7C63](https://via.placeholder.com/10/FF7C63/000000?text=+) [POV](pov) ([_.py solution_](pov/pov.py)): Rotating a tree around a given node (POV is a warming up exercise for [zipper](zipper)).
+ - ![#000000](https://via.placeholder.com/10/000000/000000?text=+) [**zipper**](zipper#zipper) ([_.py solution_](zipper/clean_zipper.py)): A programming concept I had never heard of, this is interesting to understand (tackle immutability and performances)
+ - ![#000000](https://via.placeholder.com/10/E8C14E/000000?text=+) [**nth prime**](nth-prime#computing-the-nth-prime) ([_.py solution_](nth-prime/nth_prime.py)): Memoization and algorithmic optimization
